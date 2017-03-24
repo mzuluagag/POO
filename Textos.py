@@ -72,6 +72,13 @@ class Texto():
 	mensajesCompras = {"1":"1. Comprar obra",
     				   "2":"2. Recargar presupuesto",
     				   "3":"3. Ver obras publicadas"}
+    mensajesComentarios = { "descripcion": "Escriba su comentario: "
+                            "puntuacion": "Que puntuacion le da a este articulo: "
+                            "editC": "Si desea editar puntuación oprima 1\nSi desea editar el contenido del comentario oprima 2\nSi desea editar ambos oprima 3\n"
+                            "descripcionN": "agregue su nuevo comentario: "
+                            "puntuacionN" : "agregue su nueva puntuacion: "
+
+                            }
 
 	def __init__(self):
 		pass
