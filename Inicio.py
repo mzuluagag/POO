@@ -12,7 +12,7 @@ def ValidarUsuario(usuario):
 		return False
 
 def ValidarOpcion(numero,rango):
-	if(numero>0 and numero<=rango):
+	if(numero > 0 and numero <= rango):
 		return True
 	else:
 		return False
@@ -67,9 +67,9 @@ def MenuRegistro():
 		else:
 			print(Texto.mensajesAdvertencias["usuarioInvalido"])
 			rol = str(input())
-	if rol=="artista":
+	if rol == "artista":
 		Artista.RegistroArtista()
-	elif rol=="usuario":
+	elif rol == "usuario":
 		Usuario.Registro()
 	print(" ")
 	MensajesInicio()
@@ -101,8 +101,8 @@ def MenuAdministrarArticulos():
 def MenuSocial():
 	MensajesSocial()
 	opcion = str(input())
-	while(opcion!="n"):
-		if(opcion!="n"):
+	while(opcion !="n"):
+		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
 	MensajesArtista()
@@ -110,8 +110,8 @@ def MenuSocial():
 def MenuReputacion():
 	MensajesReputacion()
 	opcion = str(input())
-	while(opcion!="n"):
-		if(opcion!="n"):
+	while(opcion !="n"):
+		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
 	MensajesArtista()
@@ -119,8 +119,8 @@ def MenuReputacion():
 def MenuCompras():
 	MensajesCompras()
 	opcion = str(input())
-	while(opcion!="n"):
-		if(opcion!="n"):
+	while(opcion !="n"):
+		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
 	MensajesArtista()
@@ -188,5 +188,24 @@ def MenuInicial():
 		else:
 			OpcionesMenuInicial(str(opcion))
 
+def MenuAgregarComentario(usuario, articulo):
+	descripcion = input(Textos.mensajesComentarios["descripcion"])
+	puntuacion = input(Textos.mensajesComentarios["puntuacion"])
+	Comentario.agregarCometarios(articulo, usuario, puntuacion, descripcion)
 
+def MenuEditarComentario(comentario):
+	opcion = input(Textos.mensajesComentarios["editC"])
+	if(opcion == 1):
+		puntuacion = input(Textos.mensajesComentarios["puntuacionN"])
+		comentario.editarComentario(puntuacion)
+	elif(opcion == 2):
+		puntuacion = comentario.getPuntuacion()
+		descripcion = input(Textos.mensajesComentarios["descripcionN"])
+		comentario.editarComentario(puntuacion, descripcion)
+	else:
+		puntuacion = input(Textos.mensajesComentarios["puntuacionN"])
+		descripcion = input(Textos.mensajesComentarios["descripcionN"])
+		comentario.editarComentario(puntuacion, descripcion)
+	
 MenuInicial()
+
