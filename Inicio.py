@@ -1,6 +1,6 @@
 from time import sleep
 from Usuario import Usuario
-from Comentario import Comentario
+#from Comentario import Comentario
 from Artista import Artista
 from Articulo import Articulo
 from Textos import Texto
@@ -68,9 +68,9 @@ def MenuRegistro():
 			print(Texto.mensajesAdvertencias["usuarioInvalido"])
 			rol = str(input())
 	if rol == "artista":
-		Artista.RegistroArtista()
+		DatosRegistroArtista()
 	elif rol == "usuario":
-		Usuario.Registro()
+		DatosRegistro()
 	print(" ")
 	MensajesInicio()
 
@@ -85,8 +85,10 @@ def MenuValidacionIngreso():
 			print(Texto.mensajesAdvertencias["usuarioInvalido"])
 			rol = str(input())
 	if rol == "artista":
+		user = DatosValidacion(rol)
 		MenuArtista()
 	else:
+		user = DatosValidacion(rol)
 		MenuComprador()
 
 def MenuAdministrarArticulos():
@@ -173,7 +175,7 @@ def MenuComprador():
 
 def OpcionesMenuInicial(opcion):
 	opciones = {"1":MenuRegistro,
-			    "2":MenuValidacionIngreso}
+				"2":MenuValidacionIngreso}
 
 	opciones[str(opcion)]()
 
@@ -189,23 +191,83 @@ def MenuInicial():
 			OpcionesMenuInicial(str(opcion))
 
 def MenuAgregarComentario(usuario, articulo):
-	descripcion = input(Textos.mensajesComentarios["descripcion"])
-	puntuacion = input(Textos.mensajesComentarios["puntuacion"])
+	descripcion = input(Texto.mensajesComentarios["descripcion"])
+	puntuacion = input(Texto.mensajesComentarios["puntuacion"])
 	Comentario.agregarCometarios(articulo, usuario, puntuacion, descripcion)
 
 def MenuEditarComentario(comentario):
-	opcion = input(Textos.mensajesComentarios["editC"])
+	opcion = input(Texto.mensajesComentarios["editC"])
 	if(opcion == 1):
-		puntuacion = input(Textos.mensajesComentarios["puntuacionN"])
+		puntuacion = input(Texto.mensajesComentarios["puntuacionN"])
 		comentario.editarComentario(puntuacion)
 	elif(opcion == 2):
 		puntuacion = comentario.getPuntuacion()
-		descripcion = input(Textos.mensajesComentarios["descripcionN"])
+		descripcion = input(Texto.mensajesComentarios["descripcionN"])
 		comentario.editarComentario(puntuacion, descripcion)
 	else:
-		puntuacion = input(Textos.mensajesComentarios["puntuacionN"])
-		descripcion = input(Textos.mensajesComentarios["descripcionN"])
+		puntuacion = input(Texto.mensajesComentarios["puntuacionN"])
+		descripcion = input(Texto.mensajesComentarios["descripcionN"])
 		comentario.editarComentario(puntuacion, descripcion)
-	
+
+def DatosRegistro():
+	print(Texto.mensajesRegistro["instruccionU"])
+	nombres = (input(Texto.mensajesRegistro["nombre"]))
+	apellidos = (input(Texto.mensajesRegistro["apellido"]))
+	sobrenombre = (input(Texto.mensajesRegistro["sobrenombre"]))
+	email = (input(Texto.mensajesRegistro["email"]))
+	iden = (input(Texto.mensajesRegistro["id"]))
+	fechaDeNacimiento = (input(Texto.mensajesRegistro["fdn"]))
+	presupuesto = (int(input(Texto.mensajesRegistro["presupuesto"])))
+	nuevoUsuario = Usuario.Registro(nombres,apellidos,sobrenombre,email,iden,fechaDeNacimiento,presupuesto)
+	print(Texto.mensajesRegistro["registrocorrectoU"])
+	return nuevoUsuario
+
+def DatosRegistroArtista():
+	usuarioActual = DatosRegistro()
+	print(Texto.mensajesRegistro["instruccionA"])
+	nombres = usuarioActual.getNombres()
+	apellidos=usuarioActual.getApellidos()
+	sobrenombre = usuarioActual.getSobrenombre()
+	iden = usuarioActual.getId()
+	email = usuarioActual.getEmail()
+	fechaDeNacimiento = usuarioActual.getFechaDeNacimiento()
+	presupuesto =usuarioActual.getPresupuesto()
+	ocupacion = (input(Texto.mensajesRegistro["ocupacion"]))
+	telefono = (input(Texto.mensajesRegistro["tel"]))
+	nuevoArtista = Artista.RegistroArtista(nombres,apellidos,sobrenombre,
+						email,iden,fechaDeNacimiento,
+						presupuesto,ocupacion,telefono)
+	print(Texto.mensajesRegistro["registrocorrectoA"])
+	return nuevoArtista
+
+def DatosValidacion(rol):
+	while(True):
+		iden = input(Texto.mensajesValidacion["id"])
+		if(rol == "usuario"):
+			user = Usuario.IngresoValido(iden)
+			if isinstance(user , Usuario):
+				print(Texto.mensajesValidacion["correcto"])
+				return user
+			else:
+				print(Texto.mensajesValidacion["nousuario"])
+		elif(rol == "artista"):
+			user = Artista.IngresoValido(iden)
+			if isinstance(user, Artista):
+				print(Texto.mensajesValidacion["correcto"])
+				return user
+			else:
+				print(Texto.mensajesValidacion["noartista"])
+
+
+
+
+
+
+
+
+
+
+
 MenuInicial()
+
 
