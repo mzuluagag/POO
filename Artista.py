@@ -1,106 +1,81 @@
 from Usuario import Usuario
 from Textos import Texto
-class Artista (Usuario):
-    dictArtistasID = {}
-    dictArtistasEmail = {}
-
-    def __init__(self):
-        super().__init__()
-        self._ocupacion = None
-        self._reputacion = None
-        self._articulos = dict()
-        self._telefono = None
-        self._articulosVendidos = dict()
 
 
-    # --------------------------------SETTERS---------------------------------------------
-    def setId(self, iden, fromRegister = False):
-        aux = iden
-        while(True):
-            if(aux in Usuario.dictUsuariosID.keys() and fromRegister):
-                print(Texto.mensajesRegistro["aiden"])
-                aux = input(Texto.mensajesRegistro["id"])
-            else:
-                self._iden = iden
-                Usuario.dictUsuariosID[iden] = self
-                Artista.dictUsuariosID[iden] = self
-                break
-    def setEmail(self, email, fromRegister = False):
-        aux = email
-        while(True):
-            if(aux in Usuario.dictUsuariosEmail.keys() and fromRegister):
-                print(Texto.mensajesRegistro["aemail"])
-                aux = input(Texto.mensajesRegistro["email"])
-            else:
-                self._email = email
-                Usuario.dictUsuariosEmail[email] = self
-                Artista.dictArtistasEmail[email] = self
-                break
+class Artista(Usuario):
+	dictArtistasID = {}
+	dictArtistasEmail = {}
 
-    def setOcupacion(self, ocupacion):
-        self._ocupacion = ocupacion
+	def __init__(self, nombres, apellidos, sobrenombre, email, iden, fechaDeNacimiento, presupuesto, ocupacion,
+				 telefono, fromRegister=False):
+		super().__init__(nombres, apellidos, sobrenombre, email, iden, fechaDeNacimiento, presupuesto)
+		self._ocupacion = None
+		self._reputacion = None
+		self._articulos = dict()
+		self._telefono = None
+		self._articulosVendidos = dict()
+		self.setTelefono(telefono)
+		self.setOcupacion(ocupacion)
+		Artista.dictArtistasID[self._iden] = self
+		Artista.dictArtistasEmail[self._email] = self
 
-    def setTelefono(self, telefono):
-        self._telefono = telefono
+	# --------------------------------SETTERS---------------------------------------------
 
-    def addArticulo(self, articulo):
-        self._articulos[articulo.getNombre()] = articulo
+	def setOcupacion(self, ocupacion):
+		self._ocupacion = ocupacion
 
-    def addArticuloVendido(self, articuloVendido):
-        self._articulosVendidos[articuloVendido.getNombre()]= articuloVendido
+	def setTelefono(self, telefono):
+		self._telefono = telefono
 
-    def setReputation(self):
-        pass
+	def addArticulo(self, articulo):
+		self._articulos[articulo.getNombre()] = articulo
 
-    # ---------------------------------GETTERS---------------------------------------------
+	def addArticuloVendido(self, articuloVendido):
+		self._articulosVendidos[articuloVendido.getNombre()] = articuloVendido
 
-    def getOcupacion(self):
-        return self._ocupacion
+	def setReputation(self):
+		pass
 
-    def getReputacion(self):
-        return self._reputacion
+	# ---------------------------------GETTERS---------------------------------------------
 
-    def getArticulos(self):
-        return self._articulos
+	def getOcupacion(self):
+		return self._ocupacion
 
-    def getTelefono(self):
-        return self._telefono
+	def getReputacion(self):
+		return self._reputacion
 
-    def getArticulosVendidos(self):
-        return self._articulosVendidos
+	def getArticulos(self):
+		return self._articulos
 
-    # --------------------------------METODOSESTATICOS--------------------------------------
+	def getTelefono(self):
+		return self._telefono
 
-    @staticmethod
-    def RegistroArtista():
-        usuarioActual = super(Artista,Artista).Registro()
-        print(Texto.mensajesRegistro["instruccionA"])
-        nuevoArtista = Artista()
-        nuevoArtista.setNombres(usuarioActual.getNombres())
-        nuevoArtista.setApellidos(usuarioActual.getApellidos())
-        nuevoArtista.setSobrenombre(usuarioActual.getSobrenombre())
-        nuevoArtista.setId(usuarioActual.getId())
-        nuevoArtista.setEmail(usuarioActual.getEmail())
-        nuevoArtista.setFechaDeNacimiento(usuarioActual.getFechaDeNacimiento())
-        nuevoArtista.setUbicacion(usuarioActual.getUbicacion())
-        nuevoArtista.setPresupuesto(usuarioActual.getPresupuesto())
-        nuevoArtista.setOcupacion(input(Texto.mensajesRegistro["ocupacion"]))
-        nuevoArtista.setTelefono(input(Texto.mensajesRegistro["tel"]))
-        print(Texto.mensajesRegistro["registrocorrectoA"])
-        return nuevoArtista
+	def getArticulosVendidos(self):
+		return self._articulosVendidos
 
+	# --------------------------------------------------------------------------------------
+	def info(self):
+		return {self._nombres, self._apellidos,self._sobrenombre,
+				self._email,self._iden, self._fechaDeNacimiento,
+				self._presupuesto, self._ocupacion,self._telefono}
 
+	# --------------------------------METODOSESTATICOS--------------------------------------
 
+	@staticmethod
+	def RegistroArtista(nombres, apellidos, sobrenombre,
+						email, iden, fechaDeNacimiento,
+						presupuesto, ocupacion, telefono):
+		artista = Artista(nombres, apellidos, sobrenombre,
+						  email, iden, fechaDeNacimiento,
+						  presupuesto, ocupacion, telefono, True)
+		return artista
 
+	@staticmethod
+	def IngresoValido(iden):
+		if (iden in Artista.dictArtistasID.keys()):
+			return Artista.dictArtistasID[iden]
+		else:
+			return None
 
-
-    @staticmethod
-    def IngresoValidoArtista():
-        while(True):
-            iden = input(Texto.mensajesValidacion["id"])
-            if(iden in Artista.dictArtistasID.keys()):
-                return Artista.dictArtistasID[iden]
-            else:
-                print(Texto.mensajesValidacion["noartista"])
 
 
