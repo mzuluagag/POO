@@ -5,15 +5,21 @@ class Usuario():
     dictUsuariosID = {}
     dictUsuariosEmail = {}
 
-    def __init__(self):
+    def __init__(self, nombres, apellidos, sobrenombre, email, iden, fechaDeNacimiento, presupuesto, fromRegister = False):
         self._nombres = None
         self._apellidos = None
         self._sobrenombre = None
         self._email = None
         self._iden = None
-        self._ubicacion = None
         self._fechaDeNacimiento = None
         self._presupuesto = None
+        self.setNombres(nombres)
+        self.setApellidos(apellidos)
+        self.setSobrenombre(sobrenombre)
+        self.setEmail(email, fromRegister)
+        self.setId(iden, fromRegister)
+        self.setFechaDeNacimiento(fechaDeNacimiento)
+        self.setPresupuesto(presupuesto, fromRegister)
 
 
     # ----------------------------------------------SETTERS---------------------------------------------
@@ -30,7 +36,6 @@ class Usuario():
     def setEmail(self, email, fromRegister = False):
         aux = email
         while(True):
-
             if(aux in Usuario.dictUsuariosEmail.keys() and fromRegister):
                 print(Texto.mensajesRegistro["aemail"])
                 aux = input(Texto.mensajesRegistro["email"])
@@ -50,8 +55,7 @@ class Usuario():
                 Usuario.dictUsuariosID[iden] = self
                 break
 
-    def setUbicacion(self, ubicacion):
-        self._ubicacion = ubicacion
+
 
     def setFechaDeNacimiento(self, fdn):
         self._fechaDeNacimiento = fdn
@@ -83,8 +87,7 @@ class Usuario():
     def getId(self):
         return self._iden
 
-    def getUbicacion(self):
-        return self._ubicacion
+
 
     def getFechaDeNacimiento(self):
         return self._fechaDeNacimiento
@@ -102,34 +105,31 @@ class Usuario():
     def RegistrarComoArtista(self, *newdata):
         pass
 
-    #------------------------------------METODOS ESTATICOS---------------------------------------------
+    def info(self):
+        return {self._nombres, self._apellidos,
+                self._sobrenombre, self._email,
+                self._iden, self._fechaDeNacimiento,
+                self._presupuesto}
+
+
+    # ------------------------------------METODOS ESTATICOS---------------------------------------------
 
     @staticmethod
-    def Registro():
-
-        while(True):
-            print(Texto.mensajesRegistro["instruccionU"])
-            nuevoUsuario = Usuario()
-            nuevoUsuario.setNombres(input(Texto.mensajesRegistro["nombre"]))
-            nuevoUsuario.setApellidos(input(Texto.mensajesRegistro["apellido"]))
-            nuevoUsuario.setSobrenombre(input(Texto.mensajesRegistro["sobrenombre"]))
-            nuevoUsuario.setEmail(input(Texto.mensajesRegistro["email"]), True)
-            nuevoUsuario.setId(input(Texto.mensajesRegistro["id"]), True)
-            nuevoUsuario.setUbicacion(input(Texto.mensajesRegistro["ubic"]))
-            nuevoUsuario.setFechaDeNacimiento(input(Texto.mensajesRegistro["fdn"]))
-            nuevoUsuario.setPresupuesto(int(input(Texto.mensajesRegistro["presupuesto"])), True)
-            print(Texto.mensajesRegistro["registrocorrectoU"])
-            return nuevoUsuario
-
+    def Registro(nombre,apellidos,sobrenombre, email, iden, fechaDeNacimiento, presupuesto):
+        user = Usuario(nombre,apellidos,sobrenombre, email, iden, fechaDeNacimiento, presupuesto, True)
+        return user
 
     @staticmethod
-    def IngresoValido():
-        while(True):
-            iden = input(Texto.mensajesValidacion["id"])
+    def IngresoValido(iden):
             if (iden in Usuario.dictUsuariosID.keys()):
                 return Usuario.dictUsuariosID[iden]
             else:
-                print(Texto.mensajesValidacion["nousuario"])
+                return None
+
+
+
+
+
 
 
 
