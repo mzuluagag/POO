@@ -1,6 +1,6 @@
 from time import sleep
 from Usuario import Usuario
-#from Comentario import Comentario
+from Comentario import Comentario
 from Artista import Artista
 from Articulo import Articulo
 from Textos import Texto
@@ -95,9 +95,16 @@ def MenuAdministrarArticulos():
 	MensajesAdaministrarArticulos()
 	opcion = str(input())
 	while(opcion!="n"):
-		if(opcion!="n"):
-			print("not yet :V")
+		OpcionesMenuArticulos()
 		opcion = str(input())
+	MensajesArtista()
+
+def OpcionesMenuArticulos(opcion):
+	opciones = {"1":DatosRegistroArticulo,
+				"2":MenuElimArticulo,
+				"3":MenuEdicionArticulo,
+				"4":VerArticulosPublicados}
+	opciones[opcion]()	
 
 def MenuSocial():
 	MensajesSocial()
@@ -175,7 +182,7 @@ def MenuInicial():
 def MenuAgregarComentario(usuario, articulo):
 	descripcion = input(Texto.mensajesComentarios["descripcion"])
 	puntuacion = input(Texto.mensajesComentarios["puntuacion"])
-	comentario.agregarCometarios(articulo, usuario, puntuacion, descripcion)
+	comentario.agregarComentarios(articulo, usuario, puntuacion, descripcion)
 
 def MenuEditarComentario(comentario):
 	opcion = input(Texto.mensajesComentarios["editC"])
@@ -274,6 +281,11 @@ def MenuElimArticulo(artista):
 		print(Texto.mensajesObras["elim"])
 	else:
 		print(Texto.mensajesObras["nopuedeedit"])
+
+def VerArticulosPublicados(artista):
+	articulos = artista.getArticulos()
+	for i in articulos:
+		print(i.getNombre())		
 
 
 MenuInicial()
