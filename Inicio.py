@@ -86,25 +86,25 @@ def MenuValidacionIngreso():
 			rol = str(input())
 	if rol == "artista":
 		user = DatosValidacion(rol)
-		MenuArtista()
+		MenuArtista(user)
 	else:
 		user = DatosValidacion(rol)
-		MenuComprador()
+		MenuComprador(user)
 
-def MenuAdministrarArticulos():
+def MenuAdministrarArticulos(artista):
 	MensajesAdaministrarArticulos()
 	opcion = str(input())
 	while(opcion!="n"):
-		OpcionesMenuArticulos()
+		OpcionesMenuArticulos(opcion,artista)
 		opcion = str(input())
 	MensajesArtista()
 
-def OpcionesMenuArticulos(opcion):
+def OpcionesMenuArticulos(opcion,artista):
 	opciones = {"1":DatosRegistroArticulo,
 				"2":MenuElimArticulo,
 				"3":MenuEdicionArticulo,
 				"4":VerArticulosPublicados}
-	opciones[opcion]()	
+	opciones[opcion](artista)	
 
 def MenuSocial():
 	MensajesSocial()
@@ -130,19 +130,19 @@ def MenuCompras():
 			print("not yet :V")
 		opcion = str(input())
 
-def OpcionesMenuArtista(opcion):
+def OpcionesMenuArtista(opcion,artista):
 	opciones = {"1":MenuAdministrarArticulos,
 				"2":MenuSocial,
 				"3":MenuReputacion,
 				"4":MenuCompras}
-	opciones[opcion]()
+	opciones[opcion](artista)
 
-def MenuArtista():
+def MenuArtista(artista):
 	print(" ")
 	MensajesArtista()
 	opcion = str(input())
 	while(opcion != "n"):
-		OpcionesMenuArtista(opcion)
+		OpcionesMenuArtista(opcion,artista)
 		MensajesArtista()
 		opcion = str(input())
 	MensajesInicio()
