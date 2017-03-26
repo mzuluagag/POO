@@ -1,4 +1,4 @@
-from Inicio import 
+ 
 from Articulo import Articulo
 class Comentario():
     listaComentarios = []
