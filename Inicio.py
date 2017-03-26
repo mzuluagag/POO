@@ -235,8 +235,8 @@ def DatosRegistroArtista():
 	ocupacion = (input(Texto.mensajesRegistro["ocupacion"]))
 	telefono = (input(Texto.mensajesRegistro["tel"]))
 	nuevoArtista = Artista.RegistroArtista(nombres,apellidos,sobrenombre,
-						email,iden,fechaDeNacimiento,
-						presupuesto,ocupacion,telefono)
+						   					email,iden,fechaDeNacimiento,
+						   					presupuesto,ocupacion,telefono)
 	print(Texto.mensajesRegistro["registrocorrectoA"])
 	return nuevoArtista
 
@@ -258,16 +258,39 @@ def DatosValidacion(rol):
 			else:
 				print(Texto.mensajesValidacion["noartista"])
 
+def DatosRegistroArticulo(artista):
+	print(Texto.mensajesObras["instrucciones:"])
+	nombre = (input(Texto.mensajesObras["nombre"]))
+	precio = (int(input(Texto.mensajesObras["precio"])))
+	tipo = (input(Texto.mensajesObras["tipo"]))
+	descripcion = (input(Texto.mensajesObras["descripcion"]))
+	nuevoArticulo = Articulo.AgregarArticulo(nombre,precio,artista,tipo,descripcion)
+	print(Texto.mensajesObras["registrocorrecto"])
+	return nuevoArticulo
 
+def MenuEdicionArticulo(artista):
 
+	nombre = input(Texto.mensajesObras["nombre"])
+	articulo = Articulo.dictArticulos[nombre]
+	print(Texto.mensajesObras["datos"])
+	for i in articulo.info():
+		print(i)
+	print(Texto.mensajesObras["edit"])
+	nombre = (input(Texto.mensajesObras["nombre"]))
+	precio = (int(input(Texto.mensajesObras["precio"])))
+	tipo = (input(Texto.mensajesObras["tipo"]))
+	descripcion = (input(Texto.mensajesObras["descripcion"]))
+	if (articulo.EditarArticulo(nombre, precio, tipo, descripcion)):
+		print(Texto.mensajesObras["editcorrecto"])
+	else:
+		print(Texto.mensajesObras["nopuedeedit"])
 
-
-
-
-
-
-
-
-MenuInicial()
+def MenuElimArticulo(artista):
+	nombre  = input(Texto.mensajesObras["nombre"])
+	articulo = Articulo.dictArticulos[nombre]
+	if articulo.EliminarArticulo(artista):
+		print(Texto.mensajesObras["elim"])
+	else:
+		print(Texto.mensajesObras["nopuedeedit"])
 
 
