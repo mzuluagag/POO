@@ -96,6 +96,7 @@ def MenuAdministrarArticulos(artista):
 	opcion = str(input())
 	while(opcion!="n"):
 		OpcionesMenuArticulos(opcion,artista)
+		MensajesAdaministrarArticulos()
 		opcion = str(input())
 	MensajesArtista()
 
@@ -178,7 +179,7 @@ def MenuInicial():
 			fin = False
 		else:
 			OpcionesMenuInicial(str(opcion))
-			
+
 def MenuEliminarComentario(comentario, usuario, ID):
 	if(usuario == comentario.getUsuario()):
 		comentario.eliminarComentario(ID)
@@ -292,7 +293,7 @@ def MenuElimArticulo(artista):
 def VerArticulosPublicados(artista):
 	articulos = artista.getArticulos()
 	for i in articulos:
-		print(i.getNombre())		
+		print(articulos[i].getNombre())		
 
 
 MenuInicial()
