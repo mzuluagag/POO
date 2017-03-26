@@ -187,8 +187,9 @@ def MenuAgregarComentario(usuario, articulo):
 def MenuEditarComentario(comentario):
 	opcion = input(Texto.mensajesComentarios["editC"])
 	if(opcion == 1):
+		descripcion = comentario.getDescripcion()
 		puntuacion = input(Texto.mensajesComentarios["puntuacionN"])
-		comentario.editarComentario(puntuacion)
+		comentario.editarComentario(puntuacion, descripcion)
 	elif(opcion == 2):
 		puntuacion = comentario.getPuntuacion()
 		descripcion = input(Texto.mensajesComentarios["descripcionN"])
