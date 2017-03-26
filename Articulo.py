@@ -3,133 +3,122 @@ from Textos import Texto
 from Usuario import Usuario
 from Artista import Artista
 
+
 class Articulo():
-    dictArticulos = {}
+	dictArticulos = {}
 
-    def __init__(self):
-        self._precio = None
-        self._nombre = None
-        self._artista = None
-        self._descripcion = None
-        self._comentarios = dict()
-        self._puntuacion = 0
-        self._fechaPublicacion = date.today()
-        self._tipo = None
-        Articulo.dictArticulos[self._nombre] = self
+	def __init__(self, nombre, precio, artista, tipo, descripcion,  fromRegister = False, puntuacion=0, comentarios=None):
+		self._precio = None
+		self._nombre = None
+		self._artista = None
+		self._descripcion = None
+		self._comentarios = comentarios
+		self._puntuacion = puntuacion
+		self._fechaPublicacion = date.today()
+		self._tipo = None
+		self.setNombre(nombre, fromRegister)
+		self.setPrecio(precio, fromRegister)
+		self.setArtista(artista)
+		self.setTipo(tipo)
+		self.setDescripcion(descripcion)
+		Articulo.dictArticulos[self._nombre] = self
 
+	# ------------------------------------------SETTERS------------------------------------------------------------------
 
-    #------------------------------------------SETTERS------------------------------------------------------------------
+	def setPrecio(self, precio, fromRegister):
+		aux = precio
+		while (True):
+			if (precio >= 0 and fromRegister==False):
+				self._precio = precio
+				break
+			else:
+				print(Texto.mensajesObras["aprecio"])
+				aux = int(input(Texto.mensajesObras["precio"]))
 
-    def setPrecio(self, precio):
-        while(True):
-            if (precio >= 0):
-                self._precio = precio
-                break
-            else:
-                print(Texto.mensajesObras["aprecio"])
+	def setNombre(self, nombre, fromRegister):
+		aux = nombre
+		while (True):
+			if (nombre in Articulo.dictArticulos.keys() and fromRegister):
+				print(Texto.mensajesObras["anombre"])
+				aux = input(Texto.mensajesObras["nombre"])
+			else:
+				self._nombre = nombre
+				break
 
+	def setArtista(self, artista):
+		self._artista = artista
 
-    def setNombre(self, nombre):
-        while(True):
-            if(nombre in Articulo.dictArticulos.keys()):
-                print(Texto.mensajesObras["anombre"])
-            else:
-                self._nombre = nombre
-                break
+	def setDescripcion(self, descripcion):
+		self._descripcion = descripcion
 
-    def setArtista(self, artista):
-        self._artista = artista
+	def addComentario(self, comentario):
+		self._comentarios.append(comentario)
 
-    def setDescripcion(self, descripcion):
-        self._descripcion = descripcion
+	def setPuntuacion(self):
+		pass
 
-    def addComentario(self, comentario):
-        self._comentarios.append(comentario)
+	def setFechaPublicacion(self):
+		self._fechaPublicacion = date.today()
 
-    def setPuntuacion(self):
-        pass
+	def setTipo(self, tipo):
+		self._tipo = tipo
 
-    def setFechaPublicacion(self):
-        self._fechaPublicacion = date.today()
+	# -------------------------------------GETTERS-----------------------------------------------------------------------
 
-    def setTipo(self, tipo):
-        self._tipo = tipo
+	def getPrecio(self):
+		return self._precio
 
-    #-------------------------------------GETTERS-----------------------------------------------------------------------
+	def getNombre(self):
+		return self._nombre
 
-    def getPrecio(self):
-        return self._precio
+	def getArtista(self):
+		return self._artista
 
-    def getNombre(self):
-        return self._nombre
+	def getDescripcion(self):
+		return self._descripcion
 
-    def getArtista(self):
-        return self._artista
+	def getComentarios(self):
+		return self._comentarios
 
-    def getDescripcion(self):
-        return self._descripcion
+	def getPuntuacion(self):
+		return self._puntuacion
 
-    def getComentarios(self):
-        return self._comentarios
+	def getFechaPublicacion(self):
+		return self._fechaPublicacion
 
-    def getPuntuacion(self):
-        return self._puntuacion
+	def getTipo(self):
+		return self._tipo
 
-    def getFechaPublicacion(self):
-        return self._fechaPublicacion
+	# --------------------------------------METODOS ESTATICOS---------------------------------
+	@staticmethod
+	def AgregarArticulo(nombre, precio, artista, tipo, descripcion):
+		nuevoArticulo = Articulo(nombre,precio,artista,tipo,descripcion, True)
+		artista.addArticulo(nuevoArticulo)
+		return nuevoArticulo
 
-    def getTipo(self):
-        return self._tipo
+	# -----------------------------------FUNCIONALIDADES----------------------------------------
+	def EditarArticulo(self, artista, nombre, precio, tipo, descripcion):
+		if (artista.getId() == self.getArtista().getId()):
+			self.setNombre(nombre)
+			self.setPrecio(precio)
+			self.setTipo(tipo)
+			self.setDescripcion(descripcion)
+			return True
+		else:
+			return False
 
-    # --------------------------------------METODOS ESTATICOS---------------------------------
-    @staticmethod
-    def AgregarArticulo(artista):
-        while(True):
-            print(Texto.mensajesObras["instrucciones:"])
-            nuevoArticulo = Articulo()
-            nuevoArticulo.setNombre(input(Texto.mensajesObras[1]))
-            nuevoArticulo.setPrecio(int(input(Texto.mensajesObras[2])))
-            nuevoArticulo.setTipo(input(Texto.mensajesObras[3]))
-            nuevoArticulo.setDescripcion(input(Texto.mensajesObras[4]))
-            nuevoArticulo.setArtista(artista)
-            artista.addArticulo(nuevoArticulo)
-            print(Texto.mensajesObras["registrocorrecto"])
-            return nuevoArticulo
+	def EliminarArticulo(self, artista):
+		if (artista.getId() == self.getArtista().getId()):
+			artista = self.getArtista()
+			nombre = self.getNombre()
+			artista._articulos.pop(nombre)
+			Articulo.dictArticulos.pop(nombre)
+			return True
+		else:
+			return False
 
-    @staticmethod
-    def EditarArticulo(articulo,artista):
-        if(artista.getId() == articulo.getArtista().getId()):
-            Articulo.info(articulo)
-            print(Texto.mensajesObras["edit"])
-            articulo.setNombre(input(Texto.mensajesObras[1]))
-            articulo.setPrecio(int(input(Texto.mensajesObras[2])))
-            articulo.setTipo(input(Texto.mensajesObras[3]))
-            articulo.setDescripcion(input(Texto.mensajesObras[4]))
-            return articulo
-        else:
-            print(Texto.mensajesObras["nopuedeedit"])
-
-    @staticmethod
-    def EliminarArticulo(articulo, artista):
-        if(artista.getId() == articulo.getArtista().getId()):
-            artista = articulo.getArtista()
-            nombre = articulo.getNombre()
-            artista._articulos.pop(nombre)
-            Articulo.dictArticulos.pop(nombre)
-            print(Texto.mensajesObras["elim"])
-        else:
-            print(Texto.mensajesObras["nopuedeedit"])
-
-    @staticmethod
-    def info(articulo):
-        print(Texto.mensajesObras["datos"])
-        print(Texto.mensajesObras["artista"] + articulo.getArtista().getSobrenombre())
-        print(Texto.mensajesObras["nombre"] + articulo.getNombre())
-        print(Texto.mensajesObras["precio"] + articulo.getPrecio())
-        print(Texto.mensajesObras["tipo"] + articulo.getTipo())
-        print(Texto.mensajesObras["descripcion"] + articulo.getDescripcion())
-        print(Texto.mensajesObras["fdp"] + articulo.getFechaPublicacion())
-        print(Texto.mensajesObras["puntuacion"] + articulo.getPuntuacion())
+	def info(self):
+		return {self._nombre, self._precio, self._tipo, self._descripcion, self._puntuacion}
 
 
 
