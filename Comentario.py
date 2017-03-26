@@ -1,14 +1,14 @@
  
-from Articulo import Articulo
 class Comentario():
-    listaComentarios = []
-
+    listaComentarios = {}
+    ID = 0
     def __init__(self, descripcion, puntuacion, articulo, usuario):
         self._descripcion = descripcion
         self._puntuacion = puntuacion
         self._articulo = articulo
         self._usuario = usuario
-        Comentario.listaComentarios.append(self)
+        self._id = ID+=1
+        Comentario.listaComentarios[ID] = self
 
 
     #--------------------------------SETTERS-----------------------------------
@@ -40,12 +40,15 @@ class Comentario():
     def getUsuario(self):
         return self._usuario
 
-    def editarComentario(self, puntuacion, descripcion):
+    def editarComentario(self, puntacion, descripcion):
         self.setDescripcion(descripcion)
         self.setPuntuacion(puntuacion)
 
+    def eliminarComentario(self, ID):
+        del Comentario.listaComentarios[ID]
 
+    #-----------------------------METODOS ESTÁTICOS --------------------------
     @staticmethod
-    def agregarComentarios(articulo, usuario, puntuacion, descripcion):
-        comentario = Comentario(descripcion, puntuacion, articulo, usuario)
+    def agregarComentarios(articulo, usuario, puntuacion, descripcion, ID):
+        comentario = Comentario(descripcion, puntuacion, articulo, usuario, ID)
         articulo.addComentario(comentario)
