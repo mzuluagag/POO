@@ -40,13 +40,12 @@ class Comentario():
     def getUsuario(self):
         return self._usuario
 
-    def editarComentario(self, puntacion = self.getPuntuacion(), descripcion = self.getDescripcion()):
+    def editarComentario(self, puntacion, descripcion):
         self.setDescripcion(descripcion)
         self.setPuntuacion(puntuacion)
 
 
     @staticmethod
     def agregarComentarios(articulo, usuario, puntuacion, descripcion):
-        Comentario = Comentario(descripcion, puntuacion, articulo, usuario)
-        articulo.addComentario(Comentario)
-
+        comentario = Comentario(descripcion, puntuacion, articulo, usuario)
+        articulo.addComentario(comentario)
