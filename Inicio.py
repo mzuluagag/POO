@@ -201,11 +201,14 @@ def MenuEditarComentario(comentario):
 		puntuacion = comentario.getPuntuacion()
 		descripcion = input(Texto.mensajesComentarios["descripcionN"])
 		comentario.editarComentario(puntuacion, descripcion)
-	else:
+	elif(opcion == 3):
 		puntuacion = input(Texto.mensajesComentarios["puntuacionN"])
 		descripcion = input(Texto.mensajesComentarios["descripcionN"])
 		comentario.editarComentario(puntuacion, descripcion)
-
+	else:
+		usuario = comentario.getUsuario()
+		ID = comentario.getID()
+		MenuEliminarComentario(comentario, usuario, ID)
 def DatosRegistro():
 	print(Texto.mensajesRegistro["instruccionU"])
 	nombres = (input(Texto.mensajesRegistro["nombre"]))
