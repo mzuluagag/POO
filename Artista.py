@@ -58,6 +58,50 @@ class Artista(Usuario):
 		return {self._nombres, self._apellidos,self._sobrenombre,
 				self._email,self._iden, self._fechaDeNacimiento,
 				self._presupuesto, self._ocupacion,self._telefono}
+	
+		def info(self):
+		return {self._nombres, self._apellidos,self._sobrenombre,
+				self._email,self._iden, self._fechaDeNacimiento,
+				self._presupuesto, self._ocupacion,self._telefono}
+
+	def CalcularReputacion(self):
+		pass
+
+	def ObtenerMejorArticulo(self):
+		dictArticulos = self.getArticulos()
+		max = 0
+		nombre = None
+		for i in dictArticulos:
+			if (dictArticulos[i].getPuntuacion() > max):
+				max = dictArticulos[i].getPuntuacion()
+				nombre = dictArticulos[i].getNombre()
+		return dictArticulos[nombre]
+
+	def ObternerArticuloMasBarato(self):
+		dictArticulos = self.getArticulos()
+		min = 9999999999
+		nombre = None
+		for i in dictArticulos:
+			if(dictArticulos[i].getPrecio() < min):
+				min = dictArticulos[i].getPrecio()
+				nombre = dictArticulos[i].getNombre()
+		return dictArticulos[nombre]
+
+	def ObtenerArticuloMasCaro(self):
+		dictArticulos = self.getArticulos()
+		max = 0
+		nombre = None
+		for i in dictArticulos:
+			if(dictArticulos[i].getPrecio() > max):
+				max = dictArticulos[i].getPrecio()
+				nombre = dictArticulos[i].getNombre()
+		return dictArticulos[nombre]
+
+	def ObtenerArticulosDigitales(self):
+		pass
+
+	def ObtenerArticulosFisicos(self):
+		pass
 
 	# --------------------------------METODOSESTATICOS--------------------------------------
 
