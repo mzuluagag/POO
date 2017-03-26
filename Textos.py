@@ -82,6 +82,3 @@ class Texto():
 					   "puntuacionN": "agregue su nueva puntuacion: "
 					   "invalido": "Este usuario no puede realizar esta accion!"}
 
-
-def __init__(self):
-	pass
