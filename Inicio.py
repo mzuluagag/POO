@@ -178,6 +178,12 @@ def MenuInicial():
 			fin = False
 		else:
 			OpcionesMenuInicial(str(opcion))
+			
+def MenuEliminarComentario(comentario, usuario, ID):
+	if(usuario == comentario.getUsuario()):
+		comentario.eliminarComentario(ID)
+	else:
+		print(Textos.mensajesComentarios["invalido"])
 
 def MenuAgregarComentario(usuario, articulo):
 	descripcion = input(Texto.mensajesComentarios["descripcion"])
