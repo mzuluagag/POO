@@ -193,7 +193,7 @@ def MenuInicial():
 def MenuAgregarComentario(usuario, articulo):
 	descripcion = input(Texto.mensajesComentarios["descripcion"])
 	puntuacion = input(Texto.mensajesComentarios["puntuacion"])
-	Comentario.agregarCometarios(articulo, usuario, puntuacion, descripcion)
+	comentario.agregarCometarios(articulo, usuario, puntuacion, descripcion)
 
 def MenuEditarComentario(comentario):
 	opcion = input(Texto.mensajesComentarios["editC"])
