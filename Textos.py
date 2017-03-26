@@ -51,6 +51,7 @@ class Texto():
 	mensajesObras = {"instrucciones:": "Se pediran los datos pertinentes para registrar el articulo",
 					 "errornombre": "Los datos son errones, puede que ya exista una obra con ese nombre",
 					 "registrocorrecto": "El articulo se ha registrado correctamente",
+					 "editcorrecto":"El articulo se editó correctamente",
 					 "datos": "Datos actuales de la articulo",
 					 "edit": "Ingrese los nuevos datos del articulo",
 					 "aprecio": "El precio no puede ser negativo, ingrese un valor positivo.",
@@ -83,3 +84,4 @@ class Texto():
 
 def __init__(self):
 	pass
+
