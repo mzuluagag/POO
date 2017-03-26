@@ -30,8 +30,9 @@ def MensajesArtista():
 	print(Texto.mensajesMenuArtista["4"])
 	print(Texto.mensajesAdvertencias["n"])
 
-def MensajesComprador():
-	pass
+def MensajesUsuario():
+	print(Texto.mensajesMenuUsuario["1"])
+	print(Texto.mensajesMenuUsuario["2"])
 
 def MensajesAdaministrarArticulos():
 	print(Texto.mensajesAdministracionArticulos["1"])
@@ -55,7 +56,6 @@ def MensajesReputacion():
 def MensajesCompras():
 	print(Texto.mensajesCompras["1"])
 	print(Texto.mensajesCompras["2"])
-	print(Texto.mensajesCompras["3"])
 	print(Texto.mensajesAdvertencias["n"])
 
 def MenuRegistro():
@@ -98,7 +98,6 @@ def MenuAdministrarArticulos():
 		if(opcion!="n"):
 			print("not yet :V")
 		opcion = str(input())
-	MensajesArtista()
 
 def MenuSocial():
 	MensajesSocial()
@@ -107,7 +106,6 @@ def MenuSocial():
 		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
-	MensajesArtista()
 
 def MenuReputacion():
 	MensajesReputacion()
@@ -116,7 +114,6 @@ def MenuReputacion():
 		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
-	MensajesArtista()
 
 def MenuCompras():
 	MensajesCompras()
@@ -125,7 +122,6 @@ def MenuCompras():
 		if(opcion !="n"):
 			print("not yet :V")
 		opcion = str(input())
-	MensajesArtista()
 
 def OpcionesMenuArtista(opcion):
 	opciones = {"1":MenuAdministrarArticulos,
@@ -140,37 +136,23 @@ def MenuArtista():
 	opcion = str(input())
 	while(opcion != "n"):
 		OpcionesMenuArtista(opcion)
+		MensajesArtista()
 		opcion = str(input())
 	MensajesInicio()
 
-def OpcionesMenuComprador(opcion):
-	opciones = {"1":MenuAdministrarArticulos,
-				"2":MenuSocial,
-				"3":MenuReputacion,
-				"4":MenuCompras}
+def OpcionesMenuUsuario(opcion):
+	opciones = {"1":MenuSocial,
+				"2":MenuCompras}
 	opciones[opcion]()
 
 def MenuComprador():
 	print(" ")
-	print("esta pasando por el menu del comprador")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print(".")
-	sleep(0.3)
-	print("Salio del menu del comprador :V")
+	MensajesUsuario()
+	opcion = str(input())
+	while(opcion != "n"):
+		OpcionesMenuUsuario(opcion)
+		MensajesUsuario()
+		opcion = str(input())
 	MensajesInicio()
 
 def OpcionesMenuInicial(opcion):
@@ -294,3 +276,4 @@ def MenuElimArticulo(artista):
 		print(Texto.mensajesObras["nopuedeedit"])
 
 
+MenuInicial()
