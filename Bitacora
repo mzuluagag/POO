@@ -1,0 +1,4 @@
+# POO
+acá pongangamos los cambios que hagamos
+(Mateo) En la clase articulo hay una función llamada PublicarArticulo(), y en el codigo, hay un metodo estático llamado AgergarArticulo(), supongo que son lo mismo entonces le voy a cambiar el nombre en el diagrama
+(Mateo) en el diagrama estaba la función comprar artículo en la clase articulo, la moví a usuario.
