@@ -180,8 +180,9 @@ def MenuInicial():
 		else:
 			OpcionesMenuInicial(str(opcion))
 
-def MenuEliminarComentario(comentario, usuario, ID):
+def MenuEliminarComentario(comentario, usuario):
 	if(usuario == comentario.getUsuario()):
+		ID = comentario.getID()
 		comentario.eliminarComentario(ID)
 	else:
 		print(Textos.mensajesComentarios["invalido"])
