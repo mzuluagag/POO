@@ -58,11 +58,7 @@ class Artista(Usuario):
 		return {self._nombres, self._apellidos,self._sobrenombre,
 				self._email,self._iden, self._fechaDeNacimiento,
 				self._presupuesto, self._ocupacion,self._telefono}
-	
-		def info(self):
-		return {self._nombres, self._apellidos,self._sobrenombre,
-				self._email,self._iden, self._fechaDeNacimiento,
-				self._presupuesto, self._ocupacion,self._telefono}
+
 
 	def CalcularReputacion(self):
 		pass
