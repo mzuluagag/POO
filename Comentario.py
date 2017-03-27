@@ -41,7 +41,7 @@ class Comentario():
     def getUsuario(self):
         return self._usuario
 
-    def editarComentario(self, puntacion, descripcion):
+    def editarComentario(self, puntuacion, descripcion):
         self.setDescripcion(descripcion)
         self.setPuntuacion(puntuacion)
 
