@@ -281,7 +281,7 @@ def MenuEdicionArticulo(artista):
 	precio = (int(input(Texto.mensajesObras["precio"])))
 	tipo = (input(Texto.mensajesObras["tipo"]))
 	descripcion = (input(Texto.mensajesObras["descripcion"]))
-	if (articulo.EditarArticulo(nombre, precio, tipo, descripcion)):
+	if (articulo.EditarArticulo(artista,nombre, precio, tipo, descripcion)):
 		print(Texto.mensajesObras["editcorrecto"])
 	else:
 		print(Texto.mensajesObras["nopuedeedit"])
