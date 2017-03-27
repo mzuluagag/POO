@@ -7,7 +7,7 @@ class Comentario():
         self._puntuacion = puntuacion
         self._articulo = articulo
         self._usuario = usuario
-        self._id = Comentario.ID+1
+        self._id = Comentario.ID
         Comentario.listaComentarios[ID] = self
         Comentario.ID+=1
 
