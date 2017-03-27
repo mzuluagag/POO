@@ -64,6 +64,7 @@ class Texto():
 					 "descripcion": "Añada una descripcion: ",
 					 "puntuacion": "La puntuación promedio es: ",
 					 "fdp": "La fecha de publicacion es: ",
+					 "id":"ID del articulo: ",
 					 "artista": "Artista: "}
 
 	mensajesReputacion1 = {"1": "1. Obtener reputacion",
