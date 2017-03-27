@@ -79,6 +79,6 @@ class Texto():
 					   "puntuacion": "Que puntuacion le da a este articulo: ",
 					   "editC": "Si desea editar puntuación oprima 1\nSi desea editar el contenido del comentario oprima 2\nSi desea editar ambos oprima 3\n",
 					   "descripcionN": "agregue su nuevo comentario: ",
-					   "puntuacionN": "agregue su nueva puntuacion: "
+					   "puntuacionN": "agregue su nueva puntuacion: ",
 					   "invalido": "Este usuario no puede realizar esta accion!"}
 
