@@ -135,9 +135,9 @@ class Articulo():
 
     def CalcularPuntuacionPromedio(self):
         cont = 0
-        for x in dictArticulos:
-            cont += dictArticulos[x].getPuntuacion
-        return cont / len(dictArticulos)
+        for x in Articulo.dictArticulos:
+            cont += Articulo.dictArticulos[x].getPuntuacion
+        return cont / len(Articulo.dictArticulos)
 
     def ObtenerMejorComentario(self):
         pass
