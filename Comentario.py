@@ -1,6 +1,4 @@
 
-from Articulo import Articulo
-
 class Comentario():
     listaComentarios = {}
     ID = 0
@@ -9,8 +7,9 @@ class Comentario():
         self._puntuacion = puntuacion
         self._articulo = articulo
         self._usuario = usuario
-        self._id = ID+=1
+        self._id = Comentario.ID+1
         Comentario.listaComentarios[ID] = self
+        Comentario.ID+=1
 
 
     #--------------------------------SETTERS-----------------------------------
@@ -42,9 +41,6 @@ class Comentario():
     def getUsuario(self):
         return self._usuario
 
-    def getID(self):
-        return self._id
-
     def editarComentario(self, puntacion, descripcion):
         self.setDescripcion(descripcion)
         self.setPuntuacion(puntuacion)
@@ -57,63 +53,3 @@ class Comentario():
     def agregarComentarios(articulo, usuario, puntuacion, descripcion, ID):
         comentario = Comentario(descripcion, puntuacion, articulo, usuario, ID)
         articulo.addComentario(comentario)
-
-from Articulo import Articulo
-
-class Comentario():
-    listaComentarios = {}
-    ID = 0
-    def __init__(self, descripcion, puntuacion, articulo, usuario):
-        self._descripcion = descripcion
-        self._puntuacion = puntuacion
-        self._articulo = articulo
-        self._usuario = usuario
-        self._id = ID+=1
-        Comentario.listaComentarios[ID] = self
-
-
-    #--------------------------------SETTERS-----------------------------------
-
-    def setDescripcion(self, descripcion):
-        self._descripcion = descripcion
-
-    def setPuntuacion(self, puntuacion):
-        self._puntuacion = puntuacion
-
-    def setArticulo(self, articulo):
-        self._articulo = articulo
-
-    def setUsuario(self, usuario):
-        self._usuario = usuario
-
-
-    #--------------------------------GETTERS------------------------------------
-
-    def getDescripcion(self):
-        return self._descripcion
-
-    def getPuntuacion(self):
-        return self._puntuacion
-
-    def getArticulo(self):
-        return self._articulo
-
-    def getUsuario(self):
-        return self._usuario
-
-    def getID(self):
-        return self._id
-
-    def editarComentario(self, puntacion, descripcion):
-        self.setDescripcion(descripcion)
-        self.setPuntuacion(puntuacion)
-
-    def eliminarComentario(self, ID):
-        del Comentario.listaComentarios[ID]
-
-    #-----------------------------METODOS ESTÁTICOS --------------------------
-    @staticmethod
-    def agregarComentarios(articulo, usuario, puntuacion, descripcion, ID):
-        comentario = Comentario(descripcion, puntuacion, articulo, usuario, ID)
-        articulo.addComentario(comentario)
-
