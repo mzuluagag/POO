@@ -28,10 +28,10 @@ class Artista(Usuario):
 		self._telefono = telefono
 
 	def addArticulo(self, articulo):
-		self._articulos[articulo.getNombre()] = articulo
+		self._articulos[articulo._id] = articulo
 
 	def addArticuloVendido(self, articuloVendido):
-		self._articulosVendidos[articuloVendido.getNombre()] = articuloVendido
+		self._articulosVendidos[articuloVendido._id] = articuloVendido
 
 	def setReputation(self):
 		pass
@@ -59,39 +59,38 @@ class Artista(Usuario):
 				self._email,self._iden, self._fechaDeNacimiento,
 				self._presupuesto, self._ocupacion,self._telefono}
 
-
 	def CalcularReputacion(self):
 		pass
 
 	def ObtenerMejorArticulo(self):
 		dictArticulos = self.getArticulos()
 		max = 0
-		nombre = None
+		id = None
 		for i in dictArticulos:
 			if (dictArticulos[i].getPuntuacion() > max):
 				max = dictArticulos[i].getPuntuacion()
-				nombre = dictArticulos[i].getNombre()
-		return dictArticulos[nombre]
+				id = i
+		return dictArticulos[id]
 
 	def ObternerArticuloMasBarato(self):
 		dictArticulos = self.getArticulos()
 		min = 9999999999
-		nombre = None
+		id = None
 		for i in dictArticulos:
 			if(dictArticulos[i].getPrecio() < min):
 				min = dictArticulos[i].getPrecio()
-				nombre = dictArticulos[i].getNombre()
-		return dictArticulos[nombre]
+				id = i
+		return dictArticulos[id]
 
 	def ObtenerArticuloMasCaro(self):
 		dictArticulos = self.getArticulos()
 		max = 0
-		nombre = None
+		id = None
 		for i in dictArticulos:
 			if(dictArticulos[i].getPrecio() > max):
 				max = dictArticulos[i].getPrecio()
-				nombre = dictArticulos[i].getNombre()
-		return dictArticulos[nombre]
+				id = i
+		return dictArticulos[id]
 
 	def ObtenerArticulosDigitales(self):
 		pass
