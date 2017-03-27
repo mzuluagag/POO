@@ -30,7 +30,7 @@ class Articulo():
     def setPrecio(self, precio, fromRegister):
         aux = precio
         while (True):
-            if (precio >= 0 and fromRegister==False):
+            if (precio >= 0):
                 self._precio = precio
                 break
             else:
@@ -155,10 +155,3 @@ class Articulo():
             if(len(mejoresArticulos) > 0):
                 break
         return mejoresArticulos
-
-
-
-
-
-
-
