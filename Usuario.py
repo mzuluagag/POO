@@ -65,7 +65,7 @@ class Usuario():
         while(True):
             if(aux < 0 and fromRegister):
                 print(Texto.mensajesRegistro["apresupuesto"])
-                aux = int(input(Texto.mensajesRegistro[8]))
+                aux = int(input(Texto.mensajesRegistro["presupuesto"]))
             else:
                 self._presupuesto = presupuesto
                 break
@@ -125,20 +125,4 @@ class Usuario():
                 return Usuario.dictUsuariosID[iden]
             else:
                 return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
