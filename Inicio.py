@@ -185,12 +185,12 @@ def MenuEliminarComentario(comentario, usuario):
 		ID = comentario.getID()
 		comentario.eliminarComentario(ID)
 	else:
-		print(Textos.mensajesComentarios["invalido"])
+		print(Texto.mensajesComentarios["invalido"])
 
 def MenuAgregarComentario(usuario, articulo):
 	descripcion = input(Texto.mensajesComentarios["descripcion"])
 	puntuacion = input(Texto.mensajesComentarios["puntuacion"])
-	comentario.agregarComentarios(articulo, usuario, puntuacion, descripcion)
+	Comentario.agregarComentarios(articulo, usuario, puntuacion, descripcion)
 
 def MenuEditarComentario(comentario):
 	opcion = input(Texto.mensajesComentarios["editC"])
@@ -271,8 +271,8 @@ def DatosRegistroArticulo(artista):
 
 def MenuEdicionArticulo(artista):
 
-	nombre = input(Texto.mensajesObras["nombre"])
-	articulo = Articulo.dictArticulos[nombre]
+	iden = input(Texto.mensajesObras["id"])
+	articulo = Articulo.dictArticulos[iden]
 	print(Texto.mensajesObras["datos"])
 	for i in articulo.info():
 		print(i)
@@ -287,8 +287,8 @@ def MenuEdicionArticulo(artista):
 		print(Texto.mensajesObras["nopuedeedit"])
 
 def MenuElimArticulo(artista):
-	nombre  = input(Texto.mensajesObras["nombre"])
-	articulo = Articulo.dictArticulos[nombre]
+	id  = input(Texto.mensajesObras["id"])
+	articulo = Articulo.dictArticulos[id]
 	if articulo.EliminarArticulo(artista):
 		print(Texto.mensajesObras["elim"])
 	else:
@@ -297,7 +297,7 @@ def MenuElimArticulo(artista):
 def VerArticulosPublicados(artista):
 	articulos = artista.getArticulos()
 	for i in articulos:
-		print(articulos[i].getNombre())		
+		print(Texto.mensajesObras["nombre"]+" "+articulos[i].getNombre()+" "+Texto.mensajesObras["id"]+" "+i)
 
 
 MenuInicial()
