@@ -8,7 +8,7 @@ class Comentario():
         self._articulo = articulo
         self._usuario = usuario
         self._id = Comentario.ID
-        Comentario.listaComentarios[ID] = self
+        Comentario.listaComentarios[Comentario.ID] = self
         Comentario.ID+=1
 
 
