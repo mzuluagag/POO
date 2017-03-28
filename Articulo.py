@@ -1,5 +1,3 @@
-from datetime import date
-from Textos import Texto
 from Usuario import Usuario
 from Artista import Artista
 
@@ -105,6 +103,17 @@ class Articulo():
 		artista.addArticulo(nuevoArticulo)
 		return nuevoArticulo
 
+	@staticmethod
+	def BuscarArticulo(nombre):
+		related = dict()
+		palabras = nombre.split(' ')
+		for palabra in palabras:
+			for i in Articulo.dictArticulos:
+				if ((Articulo.dictArticulos[i].getNombre().find(palabra)) >= 0 and
+					not(i in related.keys())):
+						related[i] = Articulo.dictArticulos[i]
+		return related
+
 	# -----------------------------------FUNCIONALIDADES----------------------------------------
 	def EditarArticulo(self, artista, nombre, precio, tipo, descripcion):
 		if (artista.getId() == self.getArtista().getId()):
@@ -135,8 +144,6 @@ class Articulo():
 			cont += Articulo.dictArticulos[x].getPuntuacion
 		return cont / len(Articulo.dictArticulos)
 
-	def ObtenerMejorComentario(self):
-		pass
 
 	def ObtenerNumeroVistas(self):
 		pass
@@ -150,3 +157,6 @@ class Articulo():
 			if (len(mejoresArticulos) > 0):
 				break
 		return mejoresArticulos
+
+	def ComprarArticulo(self):
+		pass
