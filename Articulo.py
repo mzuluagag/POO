@@ -21,6 +21,7 @@ class Articulo():
         self.setArtista(artista)
         self.setTipo(tipo)
         self.setDescripcion(descripcion)
+        artista.addArticulo(self)
         Articulo.dictArticulos[str(Articulo.iden)] = self
         Articulo.iden += 1
 
