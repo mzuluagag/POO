@@ -132,12 +132,12 @@ class Usuario():
         palabras = nombre.split(' ')
         for palabra in palabras:
             for i in Usuario.dictUsuariosID:
-                if ((palabra.find(Usuario.dictUsuariosID[i].getNombre()) >= 0 or
-                    palabra.find(Usuario.dictUsuariosID[i].getSobrenombre()) >= 0) and
+                if ((Usuario.dictUsuariosID[i].getNombres().find(palabra) >= 0 or
+                    Usuario.dictUsuariosID[i].getSobrenombre().find(palabra) >= 0) and
                     not(i in related.keys())):
                         related[i] = Usuario.dictUsuariosID[i]
-        return related�����������������������������
-    
+        return related
+
     @staticmethod
     def GenerarDatosFicticios():
         Usuario("Sergio","Arboleda","Checho","serg@gmail.com","1","Ayer",900)
