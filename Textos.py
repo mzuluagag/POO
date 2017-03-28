@@ -66,7 +66,7 @@ class Texto():
 					 "descripcion": "Añada una descripcion: ",
 					 "puntuacion": "La puntuación promedio es: ",
 					 "fdp": "La fecha de publicacion es: ",
-					 "id":"ID del articulo: ",
+					 "id":", ID de la obra: ",
 					 "artista": "Artista: "}
 
 
@@ -83,13 +83,10 @@ class Texto():
 					   "invalido": "Este usuario no puede realizar esta accion!",
 					   "buscarnombre": "Ingrese el nombre de la obra que desea comentar: ",
 					   "ingresarid": "Ingrese el ID de la obra que desea comentar: ",
-					   "encontrados": "Obras encontrados: ",
-					   "nombre": "Nombre de la obra:",
-					   "idobra": ", ID de la obra:"}
+					   "encontrados": "Obras encontrados: "}
 
 	mensajesBuscador = {"id": ", ID del artista:",
 						"nombre": "Nombre del artista:",
 						"sobrenombre": ", Sobrenombre del artista:",
 						"1": "Ingrese el nombre o sobrenombre que desea buscar: ",
 						"idb": "Ingrese el ID del artista: "}
-
