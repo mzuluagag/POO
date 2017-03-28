@@ -129,7 +129,7 @@ def MenuReputacion(artista):
 			print("not yet :V")
 		opcion = str(input())
 
-def MenuCompras():
+def MenuCompras(artista):
 	MensajesCompras()
 	opcion = str(input())
 	while(opcion !="n"):
