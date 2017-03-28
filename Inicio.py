@@ -5,6 +5,7 @@ from Articulo import Articulo
 from Textos import Texto
 
 Artista.GenerarDatosFicticios()
+Articulo.GenerarDatosFicticios()
 
 def ValidarUsuario(usuario):
 	if (usuario == "usuario" or usuario == "artista"):
