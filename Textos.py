@@ -80,10 +80,16 @@ class Texto():
 					   "editC": "Si desea editar puntuación oprima 1\nSi desea editar el contenido del comentario oprima 2\nSi desea editar ambos oprima 3\n",
 					   "descripcionN": "agregue su nuevo comentario: ",
 					   "puntuacionN": "agregue su nueva puntuacion: ",
-					   "invalido": "Este usuario no puede realizar esta accion!"}
+					   "invalido": "Este usuario no puede realizar esta accion!",
+					   "buscarnombre": "Ingrese el nombre de la obra que desea comentar: ",
+					   "ingresarid": "Ingrese el ID de la obra que desea comentar: ",
+					   "encontrados": "Obras encontrados: ",
+					   "nombre": "Nombre de la obra:",
+					   "idobra": ", ID de la obra:"}
 
 	mensajesBuscador = {"id": ", ID del artista:",
 						"nombre": "Nombre del artista:",
 						"sobrenombre": ", Sobrenombre del artista:",
 						"1": "Ingrese el nombre o sobrenombre que desea buscar: ",
 						"idb": "Ingrese el ID del artista: "}
+
