@@ -322,7 +322,7 @@ def ComentarObra(artista):
 	opciones = Articulo.BuscarArticulo(nombre)
 	print(Texto.mensajesComentarios["encontrados"])
 	for clave in opciones:
-		print(Texto.mensajesComentarios["nombre"],opciones[clave].getNombre(),Texto.mensajesComentarios["idobra"],clave)
+		print(Texto.mensajesObras["nombre"],opciones[clave].getNombre(),Texto.mensajesObras["id"],clave)
 	eleccion = str(input(Texto.mensajesComentarios["ingresarid"]))
 	MenuAgregarComentario(artista, opciones[eleccion])
 
