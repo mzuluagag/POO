@@ -146,6 +146,11 @@ class Artista(Usuario):
 		mergeSort(artistas)
 		return artistas
 
+	@staticmethod
+	def GenerarDatosFicticios():
+		Artista("Diego","Norrea","Dice","gono@gmail.com","4","The day after tomorrow",9,"Estudiante","90000")
+		Artista("Hulk","Smash","boom'd","hulk@gmail.com","5","YOUDONTCARE",900,"Máquina de matar","90000000")
+		Artista("Tyler","Durden","John","tydur@gmail.com","6","Solo nihilismolok",0,"Nihilista","9000000000")
 
 
 
