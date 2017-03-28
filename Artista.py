@@ -1,6 +1,6 @@
 from Usuario import Usuario
 from Textos import Texto
-
+from Ordenar import mergeSort
 
 class Artista(Usuario):
 	dictArtistasID = {}
@@ -60,7 +60,17 @@ class Artista(Usuario):
 				self._presupuesto, self._ocupacion,self._telefono}
 
 	def CalcularReputacion(self):
-		pass
+		articulos = self.getArticulos()
+		suma = 0
+		cantidad = 0
+		for i in articulos:
+			puntuacion = articulos[i].getPuntuacion()
+			if(puntuacion != None):
+				suma += puntuacion
+		reputacion = suma
+
+
+
 
 	def ObtenerMejorArticulo(self):
 		dictArticulos = self.getArticulos()
@@ -115,6 +125,36 @@ class Artista(Usuario):
 			return Artista.dictArtistasID[iden]
 		else:
 			return None
+
+	@staticmethod
+	def BuscarArtistaNombre(nombre):
+		related = dict()
+		palabras = nombre.split(' ')
+		for palabra in palabras:
+			for i in Artista.dictArtistasID:
+				if ((palabra.find(Artista.dictArtistasID[i].getNombre()) >= 0 or
+					palabra.find(Artista.dictArtistasID[i].getSobrenombre()) >= 0) and
+					not(i in related.keys())):
+						related[i] = Artista.dictArtistasID[i]
+		return related
+
+	@staticmethod
+	def OrdenarPorReputacion():
+		artistas = []
+		for i in Artista.dictArtistasID:
+			artistas.append(Artista.dictArtistasID[i])
+		mergeSort(artistas)
+		return artistas
+
+
+
+
+
+
+
+
+
+
 
 
 
