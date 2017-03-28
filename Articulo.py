@@ -1,7 +1,7 @@
 from Usuario import Usuario
 from Artista import Artista
 from datetime import date
-from Textos import Textos
+from Textos import Texto
 
 
 class Articulo():
