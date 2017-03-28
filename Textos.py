@@ -43,7 +43,9 @@ class Texto():
 
 	mensajesSocial = {"1": "1. Comentar obra",
 					  "2": "2. Ver comentarios obra",
-					  "3": "3. Obtener numero visitas de obra"}
+					  "3": "3. Obtener numero visitas de obra",
+					  "4": "4. Buscar artistas",
+					  "5": "5. Ver obras publicadas por artista"}
 
 	mensajesReputacion = {"1": "1. Ver reputacion",
 						  "2": "2. Ver puntuacion obra"}
@@ -67,9 +69,6 @@ class Texto():
 					 "id":"ID del articulo: ",
 					 "artista": "Artista: "}
 
-	mensajesReputacion1 = {"1": "1. Obtener reputacion",
-						  "2": "2. Obtener puntuacion promedio",
-						  "3": "3. Obtener comentario mejor mejor puntuado"}
 
 	mensajesCompras = {"1": "1. Comprar obra",
 					   "2": "2. Recargar presupuesto",
@@ -83,3 +82,8 @@ class Texto():
 					   "puntuacionN": "agregue su nueva puntuacion: ",
 					   "invalido": "Este usuario no puede realizar esta accion!"}
 
+	mensajesBuscador = {"id": ", ID del artista:",
+						"nombre": "Nombre del artista:",
+						"sobrenombre": ", Sobrenombre del artista:",
+						"1": "Ingrese el nombre o sobrenombre que desea buscar: ",
+						"idb": "Ingrese el ID del artista: "}
