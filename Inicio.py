@@ -112,14 +112,15 @@ def MenuSocial(artista):
 	MensajesSocial()
 	opcion = str(input())
 	while(opcion !="n"):
-		OpcionesMenuSocial(opcion)
+		OpcionesMenuSocial(opcion,artista)
 		MensajesSocial()
 		opcion = str(input())
 
-def OpcionesMenuSocial(opcion):
-	opciones = {"4":BuscarArtista,
+def OpcionesMenuSocial(opcion,artista):
+	opciones = {"1":ComentarObra,
+				"4":BuscarArtista,
 				"5":VerArticulosPublicadosArtista}
-	opciones[opcion]()
+	opciones[opcion](artista)
 
 def MenuReputacion(artista):
 	MensajesReputacion()
@@ -305,15 +306,23 @@ def VerArticulosPublicados(artista):
 	for i in articulos:
 		print(Texto.mensajesObras["nombre"]+" "+articulos[i].getNombre()+" "+Texto.mensajesObras["id"]+" "+i)
 
-def BuscarArtista():
+def BuscarArtista(artista):
 	nombre = str(input(Texto.mensajesBuscador["1"]))
 	resultados = Artista.BuscarArtistaNombre(nombre)
 	for clave in resultados:
 		print(Texto.mensajesBuscador["nombre"],resultados[clave].getNombres(),Texto.mensajesBuscador["sobrenombre"],resultados[clave].getSobrenombre(),Texto.mensajesBuscador["id"],clave)
 
-def VerArticulosPublicadosArtista():
+def VerArticulosPublicadosArtista(artista):
 	artista = Artista.dictArtistasID[str(input(Texto.mensajesBuscador["idb"]))]
 	VerArticulosPublicados(artista)
 
+def ComentarObra(artista):
+	nombre = str(input(Texto.mensajesComentarios["buscarnombre"]))
+	opciones = Articulo.BuscarArticulo(nombre)
+	print(Texto.mensajesComentarios["encontrados"])
+	for clave in opciones:
+		print(Texto.mensajesComentarios["nombre"],opciones[clave].getNombre(),Texto.mensajesComentarios["idobra"],clave)
+	eleccion = str(input(Texto.mensajesComentarios["ingresarid"]))
+	MenuAgregarComentario(artista, opciones[eleccion])
 
 MenuInicial()
