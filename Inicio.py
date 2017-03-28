@@ -1,9 +1,10 @@
-from time import sleep
 from Usuario import Usuario
 from Comentario import Comentario
 from Artista import Artista
 from Articulo import Articulo
 from Textos import Texto
+
+Artista.GenerarDatosFicticios()
 
 def ValidarUsuario(usuario):
 	if (usuario == "usuario" or usuario == "artista"):
@@ -45,12 +46,13 @@ def MensajesSocial():
 	print(Texto.mensajesSocial["1"])
 	print(Texto.mensajesSocial["2"])
 	print(Texto.mensajesSocial["3"])
+	print(Texto.mensajesSocial["4"])
+	print(Texto.mensajesSocial["5"])
 	print(Texto.mensajesAdvertencias["n"])
 
 def MensajesReputacion():
 	print(Texto.mensajesReputacion["1"])
 	print(Texto.mensajesReputacion["2"])
-	print(Texto.mensajesReputacion["3"])
 	print(Texto.mensajesAdvertencias["n"])
 
 def MensajesCompras():
@@ -107,15 +109,20 @@ def OpcionesMenuArticulos(opcion,artista):
 				"4":VerArticulosPublicados}
 	opciones[opcion](artista)	
 
-def MenuSocial():
+def MenuSocial(artista):
 	MensajesSocial()
 	opcion = str(input())
 	while(opcion !="n"):
-		if(opcion !="n"):
-			print("not yet :V")
+		OpcionesMenuSocial(opcion)
+		MensajesSocial()
 		opcion = str(input())
 
-def MenuReputacion():
+def OpcionesMenuSocial(opcion):
+	opciones = {"4":BuscarArtista,
+				"5":VerArticulosPublicadosArtista}
+	opciones[opcion]()
+
+def MenuReputacion(artista):
 	MensajesReputacion()
 	opcion = str(input())
 	while(opcion !="n"):
@@ -298,6 +305,16 @@ def VerArticulosPublicados(artista):
 	articulos = artista.getArticulos()
 	for i in articulos:
 		print(Texto.mensajesObras["nombre"]+" "+articulos[i].getNombre()+" "+Texto.mensajesObras["id"]+" "+i)
+
+def BuscarArtista():
+	nombre = str(input(Texto.mensajesBuscador["1"]))
+	resultados = Artista.BuscarArtistaNombre(nombre)
+	for clave in resultados:
+		print(Texto.mensajesBuscador["nombre"],resultados[clave].getNombres(),Texto.mensajesBuscador["sobrenombre"],resultados[clave].getSobrenombre(),Texto.mensajesBuscador["id"],clave)
+
+def VerArticulosPublicadosArtista():
+	artista = Artista.dictArtistasID[str(input(Texto.mensajesBuscador["idb"]))]
+	VerArticulosPublicados(artista)
 
 
 MenuInicial()
