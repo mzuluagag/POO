@@ -100,7 +100,6 @@ def MenuAdministrarArticulos(artista):
 		OpcionesMenuArticulos(opcion,artista)
 		MensajesAdaministrarArticulos()
 		opcion = str(input())
-	MensajesArtista()
 
 def OpcionesMenuArticulos(opcion,artista):
 	opciones = {"1":DatosRegistroArticulo,
