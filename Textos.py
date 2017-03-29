@@ -78,14 +78,16 @@ class Texto():
 					   "puntuacion": "Que puntuacion le da a este articulo: ",
 					   "editC": "Si desea editar puntuación oprima 1\nSi desea editar el contenido del comentario oprima 2\nSi desea editar ambos oprima 3\n",
 					   "descripcionN": "agregue su nuevo comentario: ",
-					   "puntuacionN": "agregue su nueva puntuacion: ",
-					   "invalido": "Este usuario no puede realizar esta accion!",
-					   "buscarnombre": "Ingrese el nombre de la obra que desea comentar: ",
-					   "ingresarid": "Ingrese el ID de la obra que desea comentar: ",
+					   	"puntuacionN": "agregue su nueva puntuacion: ",
+					   	"invalido": "Este usuario no puede realizar esta accion!",
+					   	"buscarnombre": "Ingrese el nombre de la obra que desea comentar: ",
+					   	"ingresarid": "Ingrese el ID de la obra que desea comentar: ",
 						"user":"Usuario: ",
 						"punt":"Puntuacion: ",
 						"desc":"Descripcion: ",
-					   "encontrados": "Obras encontrados: "}
+					    "encontrados": "Obras encontrados: ",
+						"buscarnombreV":"Ingrese el nombre de la obra: ",
+						"ingresaridV":"Ingrese el id de la obra: "}
 
 	mensajesBuscador = {"id": ", ID del artista:",
 						"nombre": "Nombre del artista:",
