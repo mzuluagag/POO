@@ -94,7 +94,7 @@ class Texto():
 						"idb": "Ingrese el ID del artista: "}
 
 	mensajesMenuUsuario = {"1": "1. Menu Social",
-						   "2": "2. Menu compras"}
+						   "2": "2. Menu Compras"}
 
 	mensajesCompras = {"buscar": "Ingrese el nombre de la obra que desea comprar: ",
 					   "ide": "Ingrese el ID de la obra que desea comprar: ",
@@ -103,7 +103,7 @@ class Texto():
 					   "saldo": "Presupuesto actual:",
 					   "recarga": "Ingrese el saldo que desea recargar: ",
 						"errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
-	
+
 	mensajesReputacion = {"1": "1. Ver ranking de artistas por reputacion",
 						  "2": "2. Ver ranking de articulos por puntuacion",
 						  "rankr":"Ranking de artistas por reputacion",
