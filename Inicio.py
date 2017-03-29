@@ -48,7 +48,6 @@ def MensajesSocial():
 	print(Texto.mensajesSocial["2"])
 	print(Texto.mensajesSocial["3"])
 	print(Texto.mensajesSocial["4"])
-	print(Texto.mensajesSocial["5"])
 	print(Texto.mensajesAdvertencias["n"])
 
 def MensajesReputacion():
@@ -119,8 +118,8 @@ def MenuSocial(artista):
 
 def OpcionesMenuSocial(opcion,artista):
 	opciones = {"1":ComentarObra,
-				"4":BuscarArtista,
-				"5":VerArticulosPublicadosArtista}
+				"3":BuscarArtista,
+				"4":VerArticulosPublicadosArtista}
 	opciones[opcion](artista)
 
 def MenuReputacion(artista):
