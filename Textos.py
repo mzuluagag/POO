@@ -103,10 +103,12 @@ class Texto():
 					   "saldo": "Presupuesto actual:",
 					   "recarga": "Ingrese el saldo que desea recargar: ",
 						"errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
-
+	
 	mensajesReputacion = {"1": "1. Ver ranking de artistas por reputacion",
 						  "2": "2. Ver ranking de articulos por puntuacion",
 						  "rankr":"Ranking de artistas por reputacion",
+						  "rankp":"Ranking de articulos por puntuacion",
+						  "punt":"Puntuacion: ",
 						  "r":"Rank: ",
 						  "rep":"Reputacion: ",
 						  "numart":"Numero de articulos: ",
