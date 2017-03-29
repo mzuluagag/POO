@@ -66,6 +66,7 @@ def MensajesReputacion():
 def MensajesCompras():
 	print(Texto.mensajesMCompras["1"])
 	print(Texto.mensajesMCompras["2"])
+	print(Texto.mensajesMCompras["3"])
 	print(Texto.mensajesAdvertencias["n"])
 
 
@@ -139,7 +140,8 @@ def OpcionesMenuSocial(opcion, artista):
 
 def OpcionesMenuCompras(opcion, artista):
 	opciones = {"1": ComprarObra,
-				"2": RecargarPresupuesto}
+				"2": RecargarPresupuesto,
+				"3": VerObrasCompradas}
 	opciones[opcion](artista)
 
 
@@ -398,6 +400,11 @@ def RecargarPresupuesto(artista):
 		print(Texto.mensajesCompras["saldo"],artista.getPresupuesto())
 	else:
 		print(Texto.mensajesCompras["errorRecarga"])
+
+def VerObrasCompradas(artista):
+	obras = artista.getArticulosComprados()
+	for clave in obras:
+		print(Texto.mensajesObras["nombre"]+str(obras[clave].getNombre())+", "+Texto.mensajesObras["precio"]+str(obras[clave].getPrecio()))
 
 MenuInicial()
 
