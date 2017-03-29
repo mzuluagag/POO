@@ -4,6 +4,7 @@ from Artista import Artista
 from Articulo import Articulo
 from Textos import Texto
 
+Usuario.GenerarDatosFicticios()
 Artista.GenerarDatosFicticios()
 Articulo.GenerarDatosFicticios()
 
@@ -364,12 +365,12 @@ def ComentarObra(artista):
 
 
 def VerComentariosObra(usuario):
-	nombre = str(input(Texto.mensajesComentarios["buscarnombre"]))
+	nombre = str(input(Texto.mensajesComentarios["buscarnombreV"]))
 	opciones = Articulo.BuscarArticulo(nombre)
 	print(Texto.mensajesComentarios["encontrados"])
 	for clave in opciones:
 		print(Texto.mensajesObras["nombre"], opciones[clave].getNombre(), Texto.mensajesObras["id"], clave)
-	eleccion = str(input(Texto.mensajesComentarios["ingresarid"]))
+	eleccion = str(input(Texto.mensajesComentarios["ingresaridV"]))
 	comentarios = opciones[eleccion].getComentarios()
 	for idcomentario in comentarios:
 		nombreUsuario = comentarios[idcomentario].getUsuario().getNombres()
@@ -382,3 +383,4 @@ def VerComentariosObra(usuario):
 
 
 MenuInicial()
+
