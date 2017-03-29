@@ -69,8 +69,8 @@ class Texto():
 
 
 	mensajesMCompras = {"1": "1. Comprar obra",
-					   "2": "2. Recargar presupuesto",
-					   "3": "3. Ver obras publicadas"}
+					    "2": "2. Recargar presupuesto",
+					    "3": "3. Ver obras compradas"}
 
 
 	mensajesComentarios = {"descripcion": "Escriba su comentario: ",
@@ -102,5 +102,5 @@ class Texto():
 					   "comprado": "Operacion exitosa, gracias por usar Desvararte =D ;*",
 					   "error": "Error, su presupuesto es insuficiente",
 					   "saldo": "Presupuesto actual:",
-					   "recarga": "Ingrese el saldo que desea recargar:",
+					   "recarga": "Ingrese el saldo que desea recargar: ",
 					   "errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
