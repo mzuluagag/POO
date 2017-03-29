@@ -53,19 +53,14 @@ class Articulo():
     def addComentario(self, comentario):
         self._comentarios[comentario._id] = comentario
 
-    def setPuntuacion(self, puntuacion):
-        if (puntuacion == 5):
-            self._puntuacion = puntuacion
-        elif (puntuacion == 4):
-            self._puntuacion = puntuacion
-        elif (puntuacion == 3):
-            self._puntuacion = puntuacion
-        elif (puntuacion == 2):
-            self._puntuacion = puntuacion
-        elif (puntuacion == 1):
-            self._puntuacion = puntuacion
-        else:
-            self._puntuacion = 0
+	def setPuntuacion(self):
+		cont = 0
+		if(len(self._comentarios) > 0):
+			for x in self._comentarios:
+				cont += int(self._comentarios[x].getPuntuacion())
+			self._puntuacion = cont / len(self._comentarios)
+		else:
+			self._puntuacion = None
 
     def setFechaPublicacion(self):
         self._fechaPublicacion = date.today()
@@ -149,12 +144,6 @@ class Articulo():
     def info(self):
         return {self._nombre, self._precio, self._tipo, self._descripcion, self._puntuacion, self._id}
 
-    def CalcularPuntuacionPromedio(self):
-        cont = 0
-        for x in Articulo.dictArticulos:
-            cont += Articulo.dictArticulos[x].getPuntuacion
-        return cont / len(Articulo.dictArticulos)
-
     def ObtenerNumeroVistas(self):
         pass
 
@@ -180,10 +169,6 @@ class Articulo():
             return True
         else:
             return False
-
-
-
-
 
     @staticmethod
     def GenerarDatosFicticios():
