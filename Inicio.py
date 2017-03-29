@@ -33,7 +33,6 @@ def MensajesArtista():
 	print(Texto.mensajesMenuArtista["1"])
 	print(Texto.mensajesMenuArtista["2"])
 	print(Texto.mensajesMenuArtista["3"])
-	print(Texto.mensajesMenuArtista["4"])
 	print(Texto.mensajesAdvertencias["n"])
 
 
@@ -65,8 +64,8 @@ def MensajesReputacion():
 
 
 def MensajesCompras():
-	print(Texto.mensajesCompras["1"])
-	print(Texto.mensajesCompras["2"])
+	print(Texto.mensajesMCompras["1"])
+	print(Texto.mensajesMCompras["2"])
 	print(Texto.mensajesAdvertencias["n"])
 
 
@@ -138,29 +137,25 @@ def OpcionesMenuSocial(opcion, artista):
 	opciones[opcion](artista)
 
 
-def MenuReputacion(artista):
-	MensajesReputacion()
-	opcion = str(input())
-	while (opcion != "n"):
-		if (opcion != "n"):
-			print("not yet :V")
-		opcion = str(input())
+def OpcionesMenuCompras(opcion, artista):
+	opciones = {"1": ComprarObra,
+				"2": RecargarPresupuesto}
+	opciones[opcion](artista)
 
 
 def MenuCompras(artista):
 	MensajesCompras()
 	opcion = str(input())
 	while (opcion != "n"):
-		if (opcion != "n"):
-			print("not yet :V")
+		OpcionesMenuCompras(opcion,artista)
+		MensajesCompras()
 		opcion = str(input())
 
 
 def OpcionesMenuArtista(opcion, artista):
 	opciones = {"1": MenuAdministrarArticulos,
 				"2": MenuSocial,
-				"3": MenuReputacion,
-				"4": MenuCompras}
+				"3": MenuCompras}
 	opciones[opcion](artista)
 
 
@@ -381,6 +376,28 @@ def VerComentariosObra(usuario):
 		print(Texto.mensajesComentarios["desc"]+" "+descripcion)
 
 
+def ComprarObra(artista):
+	nombre = str(input(Texto.mensajesCompras["buscar"]))
+	opciones = Articulo.BuscarArticulo(nombre)
+	print(Texto.mensajesComentarios["encontrados"])
+	for clave in opciones:
+		if opciones[clave].getEstado:
+			print(Texto.mensajesObras["nombre"], opciones[clave].getNombre(),Texto.mensajesObras["precio"],opciones[clave].getPrecio() ,Texto.mensajesObras["id"], clave)
+	eleccion = str(input(Texto.mensajesCompras["ide"]))
+	if(opciones[eleccion].ComprarArticulo(artista)):
+		print(Texto.mensajesCompras["comprado"])
+		print(Texto.mensajesCompras["saldo"],artista.getPresupuesto())
+	else:
+		print(Texto.mensajesCompras["error"])
+		print(Texto.mensajesCompras["saldo"],artista.getPresupuesto())
+
+def RecargarPresupuesto(artista):
+	recarga = int(input(Texto.mensajesCompras["recarga"]))
+	if recarga>0:
+		artista.RecargarPresupuesto(recarga)
+		print(Texto.mensajesCompras["saldo"],artista.getPresupuesto())
+	else:
+		print(Texto.mensajesCompras["errorRecarga"])
 
 MenuInicial()
 
