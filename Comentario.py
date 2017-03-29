@@ -54,4 +54,3 @@ class Comentario():
 	def agregarComentarios(articulo, usuario, puntuacion, descripcion):
 		comentario = Comentario(descripcion, puntuacion, articulo, usuario)
 		articulo.addComentario(comentario)
-
