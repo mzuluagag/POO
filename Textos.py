@@ -82,6 +82,9 @@ class Texto():
 					   "invalido": "Este usuario no puede realizar esta accion!",
 					   "buscarnombre": "Ingrese el nombre de la obra que desea comentar: ",
 					   "ingresarid": "Ingrese el ID de la obra que desea comentar: ",
+						"user":"Usuario: ",
+						"punt":"Puntuacion: ",
+						"desc":"Descripcion: ",
 					   "encontrados": "Obras encontrados: "}
 
 	mensajesBuscador = {"id": ", ID del artista:",
@@ -89,3 +92,5 @@ class Texto():
 						"sobrenombre": ", Sobrenombre del artista:",
 						"1": "Ingrese el nombre o sobrenombre que desea buscar: ",
 						"idb": "Ingrese el ID del artista: "}
+	mensajesMenuUsuario = {"1":"Menu Social",
+						   "2":"Menu compras"}
