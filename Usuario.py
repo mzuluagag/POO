@@ -4,7 +4,6 @@ from Textos import Texto
 class Usuario():
     dictUsuariosID = {}
     dictUsuariosEmail = {}
-
     def __init__(self, nombres, apellidos, sobrenombre, email, iden, fechaDeNacimiento, presupuesto, fromRegister = False):
         self._nombres = None
         self._apellidos = None
@@ -145,3 +144,4 @@ class Usuario():
         Usuario("Sergio","Arboleda","Checho","serg@gmail.com","1","Ayer",900)
         Usuario("Carlos","Torres","C4T0","carl@gmail.com","2","Hoy", 899)
         Usuario("Mateo","Zuluaga","M4T3","mat@gmail.com","3","Mañana",901)
+
