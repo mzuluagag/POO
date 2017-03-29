@@ -39,6 +39,7 @@ def MensajesArtista():
 def MensajesUsuario():
 	print(Texto.mensajesMenuUsuario["1"])
 	print(Texto.mensajesMenuUsuario["2"])
+	print(Texto.mensajesAdvertencias["n"])
 
 
 def MensajesAdaministrarArticulos():
@@ -173,18 +174,18 @@ def MenuArtista(artista):
 	MensajesInicio()
 
 
-def OpcionesMenuUsuario(opcion):
+def OpcionesMenuUsuario(opcion, usuario):
 	opciones = {"1": MenuSocial,
 				"2": MenuCompras}
-	opciones[opcion]()
+	opciones[opcion](usuario)
 
 
-def MenuComprador():
+def MenuComprador(usuario):
 	print(" ")
 	MensajesUsuario()
 	opcion = str(input())
 	while (opcion != "n"):
-		OpcionesMenuUsuario(opcion)
+		OpcionesMenuUsuario(opcion, usuario)
 		MensajesUsuario()
 		opcion = str(input())
 	MensajesInicio()
@@ -447,6 +448,5 @@ def RankingPuntuacion():
 		rank += 1
 
 
+
 MenuInicial()
-
-
