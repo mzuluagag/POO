@@ -54,6 +54,7 @@ def MensajesSocial():
 	print(Texto.mensajesSocial["2"])
 	print(Texto.mensajesSocial["3"])
 	print(Texto.mensajesSocial["4"])
+	print(Texto.mensajesSocial["5"])
 	print(Texto.mensajesAdvertencias["n"])
 
 
@@ -120,7 +121,6 @@ def OpcionesMenuArticulos(opcion, artista):
 				"4": VerArticulosPublicados}
 	opciones[opcion](artista)
 
-
 def MenuSocial(artista):
 	MensajesSocial()
 	opcion = str(input())
@@ -134,7 +134,8 @@ def OpcionesMenuSocial(opcion, artista):
 	opciones = {"1": ComentarObra,
 				"2": VerComentariosObra,
 				"3": BuscarArtista,
-				"4": VerArticulosPublicadosArtista}
+				"4": VerArticulosPublicadosArtista,
+				"5": MenuReputacion}
 	opciones[opcion](artista)
 
 
@@ -406,5 +407,37 @@ def VerObrasCompradas(artista):
 	for clave in obras:
 		print(Texto.mensajesObras["nombre"]+str(obras[clave].getNombre())+", "+Texto.mensajesObras["precio"]+str(obras[clave].getPrecio()))
 
+def MenuReputacion(artista):
+	MensajesReputacion()
+	opcion = str(input())
+	while (opcion != "n"):
+		OpcionesMenuReputacion(opcion)
+		MensajesReputacion()
+		opcion = str(input())
+
+def OpcionesMenuReputacion(opcion):
+	opciones = {"1": RankingReputacion,
+				"2": RankingPuntuacion}
+	opciones[opcion]()
+
+def RankingReputacion():
+	artistas = Artista.OrdenarPorReputacion()
+	rank = 1
+	print(Texto.mensajesReputacion["rankr"])
+	for artista in artistas:
+		nombre = artista.getNombres()+" "+artista.getApellidos()
+		reputacion = artista.getReputacion()
+		sobrenombre = artista.getSobrenombre()
+		print(Texto.mensajesReputacion["r"]+" "+str(rank)+" "+
+			  Texto.mensajesReputacion["rep"]+" "+str(reputacion)+" "+
+			  Texto.mensajesReputacion["nombres"]+" "+nombre+" "+
+			  Texto.mensajesReputacion["sobrenombre"]+" "+sobrenombre)
+		rank += 1
+
+def RankingPuntuacion():
+	pass
+
+
 MenuInicial()
+
 
