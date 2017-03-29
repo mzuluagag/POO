@@ -43,9 +43,8 @@ class Texto():
 
 	mensajesSocial = {"1": "1. Comentar obra",
 					  "2": "2. Ver comentarios obra",
-					  "3": "3. Obtener numero visitas de obra",
-					  "4": "4. Buscar artistas",
-					  "5": "5. Ver obras publicadas por artista"}
+					  "3": "3. Buscar artistas",
+					  "4": "4. Ver obras publicadas por artista"}
 
 	mensajesReputacion = {"1": "1. Ver reputacion",
 						  "2": "2. Ver puntuacion obra"}
@@ -66,7 +65,7 @@ class Texto():
 					 "descripcion": "Añada una descripcion: ",
 					 "puntuacion": "La puntuación promedio es: ",
 					 "fdp": "La fecha de publicacion es: ",
-					 "id":", ID de la obra: ",
+					 "id":"ID de la obra: ",
 					 "artista": "Artista: "}
 
 
