@@ -13,6 +13,7 @@ class Usuario():
         self._iden = None
         self._fechaDeNacimiento = None
         self._presupuesto = None
+        self._obrasCompradas = dict()
         self.setNombres(nombres)
         self.setApellidos(apellidos)
         self.setSobrenombre(sobrenombre)
@@ -87,20 +88,21 @@ class Usuario():
     def getId(self):
         return self._iden
 
-
-
     def getFechaDeNacimiento(self):
         return self._fechaDeNacimiento
 
     def getPresupuesto(self):
         return self._presupuesto
 
+    def getArticulosComprados(self):
+        return self._obrasCompradas
+
     # -----------------------------------FUNCIONALIDADES----------------------------------------------
     def RecargarPresupuesto(self, recarga):
-        pass
+            self._presupuesto += recarga
 
     def RestarPresupuesto(self, resta):
-        pass
+            self._presupuesto -= resta
 
     def RegistrarComoArtista(self, *newdata):
         pass
