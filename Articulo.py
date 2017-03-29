@@ -172,6 +172,7 @@ class Articulo():
         if (usuario.getPresupuesto() >= self.getPrecio()):
             artista = self.getArtista()
             artista._articulosVendidos[str(self.getId())] = self
+            usuario._obrasCompradas[str(self.getId())] = self
             usuario.RestarPresupuesto(self.getPrecio())
             self.setEstado(False)
             del artista._articulos[str(self.getId())]
