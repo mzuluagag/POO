@@ -435,7 +435,16 @@ def RankingReputacion():
 		rank += 1
 
 def RankingPuntuacion():
-	pass
+	articulos = Articulo.OrdenarPorReputacion()
+	rank = 1
+	print(Texto.mensajesReputacion["rankp"])
+	for articulo in articulos:
+		nombre = articulo.getNombre()
+		puntuacion = articulo.getPuntuacion()
+		print(Texto.mensajesReputacion["r"]+" "+str(rank)+" "+
+			  Texto.mensajesReputacion["punt"]+" "+str(puntuacion)+" "+
+			  Texto.mensajesReputacion["nombres"]+" "+nombre)
+		rank += 1
 
 
 MenuInicial()
