@@ -33,8 +33,7 @@ class Texto():
 
 	mensajesMenuArtista = {"1": "1. Administrar obras",
 						   "2": "2. Social",
-						   "3": "3. Reputacion/Puntuacion",
-						   "4": "4. Compras/Presupuesto"}
+						   "3": "3. Compras/Presupuesto"}
 
 	mensajesAdministracionArticulos = {"1": "1. Publicar obra",
 									   "2": "2. Eliminar obra",
@@ -69,7 +68,7 @@ class Texto():
 					 "artista": "Artista: "}
 
 
-	mensajesCompras = {"1": "1. Comprar obra",
+	mensajesMCompras = {"1": "1. Comprar obra",
 					   "2": "2. Recargar presupuesto",
 					   "3": "3. Ver obras publicadas"}
 
@@ -85,7 +84,7 @@ class Texto():
 						"user":"Usuario: ",
 						"punt":"Puntuacion: ",
 						"desc":"Descripcion: ",
-					    "encontrados": "Obras encontrados: ",
+					    "encontrados": "Obras encontradas: ",
 						"buscarnombreV":"Ingrese el nombre de la obra: ",
 						"ingresaridV":"Ingrese el id de la obra: "}
 
@@ -94,5 +93,14 @@ class Texto():
 						"sobrenombre": ", Sobrenombre del artista:",
 						"1": "Ingrese el nombre o sobrenombre que desea buscar: ",
 						"idb": "Ingrese el ID del artista: "}
-	mensajesMenuUsuario = {"1":"Menu Social",
-						   "2":"Menu compras"}
+
+	mensajesMenuUsuario = {"1": "1. Menu Social",
+						   "2": "2. Menu compras"}
+
+	mensajesCompras = {"buscar": "Ingrese el nombre de la obra que desea comprar: ",
+					   "ide": "Ingrese el ID de la obra que desea comprar: ",
+					   "comprado": "Operacion exitosa, gracias por usar Desvararte =D ;*",
+					   "error": "Error, su presupuesto es insuficiente",
+					   "saldo": "Presupuesto actual:",
+					   "recarga": "Ingrese el saldo que desea recargar:",
+					   "errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
