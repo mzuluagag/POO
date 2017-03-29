@@ -43,10 +43,9 @@ class Texto():
 	mensajesSocial = {"1": "1. Comentar obra",
 					  "2": "2. Ver comentarios obra",
 					  "3": "3. Buscar artistas",
-					  "4": "4. Ver obras publicadas por artista"}
+					  "4": "4. Ver obras publicadas por artista",
+					  "5": "5. Rankings"}
 
-	mensajesReputacion = {"1": "1. Ver reputacion",
-						  "2": "2. Ver puntuacion obra"}
 
 	mensajesObras = {"instrucciones:": "Se pediran los datos pertinentes para registrar el articulo",
 					 "errornombre": "Los datos son errones, puede que ya exista una obra con ese nombre",
@@ -103,4 +102,13 @@ class Texto():
 					   "error": "Error, su presupuesto es insuficiente",
 					   "saldo": "Presupuesto actual:",
 					   "recarga": "Ingrese el saldo que desea recargar: ",
-					   "errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
+						"errorRecarga": "Error, el saldo a recargar no puede ser negativo o nulo"}
+
+	mensajesReputacion = {"1": "1. Ver ranking de artistas por reputacion",
+						  "2": "2. Ver ranking de articulos por puntuacion",
+						  "rankr":"Ranking de artistas por reputacion",
+						  "r":"Rank: ",
+						  "rep":"Reputacion: ",
+						  "numart":"Numero de articulos: ",
+						  "nombres":"Nombre: ",
+						  "sobrenombre":"Sobrenombre: "}
