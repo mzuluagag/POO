@@ -1,7 +1,0 @@
-# POO
-acá pongangamos los cambios que hagamos
-(Mateo) En la clase articulo hay una función llamada PublicarArticulo(), y en el codigo, hay un metodo estático llamado AgergarArticulo(), supongo que son lo mismo entonces le voy a cambiar el nombre en el diagrama
-(Mateo) en el diagrama estaba la función comprar artículo en la clase articulo, la moví a usuario.
-(Sergio) Se agregó el menu de opciones de articulo en la clase inicio que contiene las opciones de ver,editar, elminar y agregar articulo.
-(Sergio) Se agregaron las funcionalidades del diagrama a Artista
-(Sergio) Se le agregó el atributo ID a los articulos, generado por el programa.
