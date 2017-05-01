@@ -29,6 +29,28 @@ public class Usuario {
         this.email = email;
         this.id = id;
         this.fechaDeNacimiento = fechaDeNacimiento;
+        this.presupuesto = 0;
         
+    }
+    public String getId(){
+        return this.id;
+    }
+    public String getNombres(){
+        return this.nombres;
+    }
+    public String getApellidos(){
+        return this.apellidos;
+    }
+    public String getSobrenombre(){
+        return this.sobrenombre;
+    }
+    public String getEmail(){
+        return this.email;
+    }
+    public String getFechaDeNacimiento(){
+        return this.fechaDeNacimiento;
+    }
+    public int getPresupuesto(){
+        return this.presupuesto;
     }
 }
