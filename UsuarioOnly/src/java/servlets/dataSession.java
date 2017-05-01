@@ -12,6 +12,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.RequestDispatcher;
+import models.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -72,7 +77,11 @@ public class dataSession extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        List<Usuario> usuarios = (ArrayList<Usuario>) session.getAttribute("Usuarios");
+        request.setAttribute("Usuarios", usuarios);
+        RequestDispatcher view = request.getRequestDispatcher("mostrarUsuarios.jsp");
+        view.forward(request, response);
     }
 
     /**
