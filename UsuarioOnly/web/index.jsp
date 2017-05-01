@@ -15,6 +15,7 @@
     <body>
         <a href="./registerUsuario.jsp">Registrarse</a>
         <a href="./buscarUsuario.jsp">Buscar usuarios</a>
+        <a href="./mostrarUsuarios.jsp">Mostrar usuarios</a> 
     </body>
 </html>
 <%@include file="footer.jsp" %>
