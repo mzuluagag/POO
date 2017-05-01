@@ -5,13 +5,16 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="header.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Desvararte</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <a href="./registerUsuario.jsp">Registrarse</a>
+        <a href="./buscarUsuario.jsp">Buscar usuarios</a>
     </body>
 </html>
+<%@include file="footer.jsp" %>
