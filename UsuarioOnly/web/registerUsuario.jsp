@@ -23,6 +23,9 @@
             <input type="submit" name="Confirmar">
         </form>
         <c:if test="${!empty bienvenido}">bienvenido</c:if>
-    </body>
+            <form action="./index.jsp">
+                <input type="submit" value="Inicio" />
+            </form>
+        </body>
     <%@include file="footer.jsp" %>
 </html>
