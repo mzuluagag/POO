@@ -82,7 +82,9 @@ public class getData extends HttpServlet {
         
         if (null != getDataSession.getAttribute("Usuarios")) {
             usuarios  = (ArrayList<Usuario>) getDataSession.getAttribute("Usuarios");
-            
+            getDataSession.setAttribute("Usuarios", usuarios);
+        }else{
+            getDataSession.setAttribute("Usuarios", usuarios);
         }
         String nombres = request.getParameter("nombre");
         String apellidos = request.getParameter("apellidos");
@@ -91,7 +93,8 @@ public class getData extends HttpServlet {
         String id = request.getParameter("id");
         String fechaDeNacimiento = String.valueOf(request.getParameter("fdn"));
         usuarios.add(new Usuario(nombres,apellidos,sobrenombre,email,id,fechaDeNacimiento));
-        request.setAttribute("bienvenido", "Bienvenido a desvararte mr. "+ nombres);
+        String welcomeMsg = "Bienvenido a desvararte mr. "+ nombres;
+        request.setAttribute("bienvenido",welcomeMsg);
         RequestDispatcher view = request.getRequestDispatcher("registerUsuario.jsp");
         
         view.forward(request, response);
@@ -111,3 +114,4 @@ public class getData extends HttpServlet {
     }// </editor-fold>
 
 }
+
