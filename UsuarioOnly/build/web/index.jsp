@@ -18,13 +18,13 @@
     <div class="main">
     <body>
         <form action="./registerUsuario.jsp">
-            <input type="submit" value="Registro" />
+            <input type="submit" value="Registro" /><br/><br/>
         </form>
         <form action="./buscarUsuario.jsp">
-            <input type="submit" value="Buscar usuarios" />
+            <input type="submit" value="Buscar usuarios" /><br/><br/>
         </form>
         <form action="./mostrarUsuarios.jsp">
-            <input type="submit" value="Mostrar usuarios" />
+            <input type="submit" value="Mostrar usuarios" /><br/><br/>
         </form> 
     </body>
     </div>
