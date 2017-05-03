@@ -9,9 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href ="css/bootstrap-theme.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        
         
     </head>
+    <div class="header">
     <body>
+        <h1 id="highmsg">Why are you so down wtf</h1>
     </body>
+    </div>
 </html>

@@ -9,8 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+        <div class="header">
+            <h1 id="highmsg">Desvararte, just get recognized</h1>
+        </div>
     </head>
-    <body>
-    </body>
-</html>
+</html>    
+    

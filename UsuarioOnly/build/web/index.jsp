@@ -10,12 +10,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte</title>
     </head>
+    <div class="main">
     <body>
-        <a href="./registerUsuario.jsp">Registrarse</a>
-        <a href="./buscarUsuario.jsp">Buscar usuarios</a>
-        <a href="./mostrarUsuarios.jsp">Mostrar usuarios</a> 
+        <form action="./registerUsuario.jsp">
+            <input type="submit" value="Registro" />
+        </form>
+        <form action="./buscarUsuario.jsp">
+            <input type="submit" value="Buscar usuarios" />
+        </form>
+        <form action="./mostrarUsuarios.jsp">
+            <input type="submit" value="Mostrar usuarios" />
+        </form> 
     </body>
+    </div>
 </html>
 <%@include file="footer.jsp" %>

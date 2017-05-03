@@ -14,9 +14,7 @@
         
         
     </head>
-    <div class="header">
     <body>
-        <h1 id="highmsg">Why are you so down wtf</h1>
+        <h1>Why are you so down wtf</h1>
     </body>
-    </div>
 </html>

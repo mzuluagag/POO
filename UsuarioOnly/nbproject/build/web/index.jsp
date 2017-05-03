@@ -15,18 +15,10 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte</title>
     </head>
-    <div class="main">
     <body>
-        <form action="./registerUsuario.jsp">
-            <input type="submit" value="Registro" />
-        </form>
-        <form action="./buscarUsuario.jsp">
-            <input type="submit" value="Buscar usuarios" />
-        </form>
-        <form action="./mostrarUsuarios.jsp">
-            <input type="submit" value="Mostrar usuarios" />
-        </form> 
+        <a href="./registerUsuario.jsp">Registrarse</a>
+        <a href="./buscarUsuario.jsp">Buscar usuarios</a>
+        <a href="./mostrarUsuarios.jsp">Mostrar usuarios</a> 
     </body>
-    </div>
 </html>
 <%@include file="footer.jsp" %>

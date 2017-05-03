@@ -16,7 +16,6 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte-Buscar usuarios</title>
     </head>
-    <div class="main">
     <body>
         <form method ="GET" action="./buscarUsuario">
             Ingrese el ID del usuario a buscar:<input type="text" name="id"><br> </br>
@@ -39,10 +38,6 @@
 
             </c:choose>
         </form>
-        <form action="./index.jsp">
-            <input type="submit" value="Inicio" />
-        </form>
     </body>
-    </div>
 </html>
 <%@include file="footer.jsp"%>

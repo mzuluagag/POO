@@ -114,4 +114,3 @@ public class getData extends HttpServlet {
     }// </editor-fold>
 
 }
-

@@ -12,8 +12,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte-Buscar usuarios</title>
     </head>
+    <div class="main">
     <body>
         <form method ="GET" action="./buscarUsuario">
             Ingrese el ID del usuario a buscar:<input type="text" name="id"><br> </br>
@@ -40,5 +43,6 @@
             <input type="submit" value="Inicio" />
         </form>
     </body>
+    </div>
 </html>
 <%@include file="footer.jsp"%>

@@ -62,7 +62,6 @@ dfn {
 h1 {
   margin: .67em 0;
   font-size: 2em;
-  
  
 }
 mark {
@@ -117,7 +116,7 @@ select,
 textarea {
   margin: 0;
   font: inherit;
-  
+  color: inherit;
 }
 button {
   overflow: visible;

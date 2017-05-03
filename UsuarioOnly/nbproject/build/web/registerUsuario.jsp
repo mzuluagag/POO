@@ -10,14 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte- Registro</title>
     </head>
-    <div class="main">
     <body>
-        <div class="form">
         <form method="POST" action="./getData">
             Nombre: <input type="text" name="nombre"> <br> </br>
             Apellidos: <input type="text" name="apellidos"><br> </br>
@@ -29,12 +27,7 @@
         </form>
         <c:if test="${!empty bienvenido}">
             <h1>${bienvenido}</h1>
-        </c:if> 
-        </div>    
+        </c:if>
     </body>
-    <form action="./index.jsp">
-        <input type="submit" value="Inicio" />
-    </form>
-    </div>
     <%@include file="footer.jsp" %>
 </html>
