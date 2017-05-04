@@ -39,9 +39,6 @@
 
             </c:choose>
         </form>
-        <form action="./index.jsp">
-            <input type="submit" value="Inicio" />
-        </form>
     </body>
     </div>
 </html>

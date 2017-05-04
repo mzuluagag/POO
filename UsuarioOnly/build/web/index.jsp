@@ -15,16 +15,17 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte</title>
     </head>
-    <div class="main">
+    <div class="container" ALIGN="center" STYLE= "background-color:#DAF7A6">
     <body>
-        <form action="./registerUsuario.jsp">
-            <input type="submit" value="Registro" /><br/><br/>
+        <br/>
+        <form  action="./registerUsuario.jsp" >
+            <button class="btn btn-block btn-lg btn-danger" type="submit" style='width:200px' >Registro</button><br/><br/>
         </form>
-        <form action="./buscarUsuario.jsp">
-            <input type="submit" value="Buscar usuarios" /><br/><br/>
+        <form  action="./buscarUsuario.jsp" >
+            <input class="btn btn-block btn-lg btn-danger" type="submit" value="Buscar usuarios" style='width:200px' /><br/><br/>
         </form>
-        <form action="./mostrarUsuarios.jsp">
-            <input type="submit" value="Mostrar usuarios" /><br/><br/>
+        <form  action="./mostrarUsuarios.jsp" >
+            <input class="btn btn-block btn-lg btn-danger" type="submit" value="Mostrar usuarios" style='width:200px'/><br/><br/>
         </form> 
     </body>
     </div>

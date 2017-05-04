@@ -15,26 +15,27 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte- Registro</title>
     </head>
-    <div class="main">
-    <body>
-        <div class="form">
-        <form method="POST" action="./getData">
-            Nombre: <input type="text" name="nombre"> <br> </br>
-            Apellidos: <input type="text" name="apellidos"><br> </br>
-            Sobrenombre: <input type="text" name="sobrenombre"><br> </br>
-            E-mail: <input type="email" name="email"><br> </br>
-            Identificación: <input type="text" name="id"><br> </br>
-            Fecha de nacimiento: <input type="date" name="fdn"><br> </br>
-            <input type="submit" name="Confirmar">
-        </form>
-        <c:if test="${!empty bienvenido}">
-            <h1>${bienvenido}</h1>
-        </c:if> 
-        </div>    
-    </body>
-    <form action="./index.jsp">
-        <input type="submit" value="Inicio" />
-    </form>
+    
+    <div class="container" align="center" STYLE= "background-color:#DAF7A6" >
+        <br/>
+        <body>
+            <div class="form" style="width:23%">
+                <form method="POST" action="./getData" >
+                    Nombre: <input class="form-control" type="text" name="nombre" required> <br> </br>
+                    Apellidos: <input class="form-control" type="text" name="apellidos" required><br> </br>
+                    Sobrenombre: <input class="form-control" type="text" name="sobrenombre" required><br> </br>
+                    E-mail: <input class="form-control" type="email" name="email" required><br> </br>
+                    Identificación: <input class="form-control" type="text" name="id" required><br> </br>
+                    Fecha de nacimiento: <input class="form-control" type="date" name="fdn" required><br> </br>
+                    <input class="btn btn-primary form-control" type="submit" name="Confirmar">
+                </form>
+                <c:if test="${!empty bienvenido}">
+                    <h1>${bienvenido}</h1>
+                </c:if> 
+            </div>    
+        </body>
+        <br/>
     </div>
+    
     <%@include file="footer.jsp" %>
 </html>

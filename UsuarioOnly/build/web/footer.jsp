@@ -14,9 +14,12 @@
         
         
     </head>
-    <div class="header">
+    <div class="footer">
     <body>
         <h1 id="highmsg">Why are you so down wtf</h1>
+        <p style="color:#dbdbdb;">
+            Team ?
+        </p>
     </body>
     </div>
 </html>
