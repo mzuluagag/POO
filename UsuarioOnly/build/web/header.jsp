@@ -12,18 +12,32 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-    <header style="background-color: #761c19;position:static;width:100%;padding-top: 2em;">
-        <div class="container">
-            <div class="col-md-3">
-                <form action="./index.jsp">
-                    <input type="image" src="http://recintosculturalesqro.gob.mx/extension/wp-content/uploads/2015/06/icono-escuela-de-artes-300x300.png" class="img-responsive img-circle" alt="" />
-                </form>
+    <header style="position:static;width:100%;">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+
+                <div class="collapse navbar-collapse" id="navegacion-fm">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="./index.jsp">Inicio</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./inicioSesion.jsp"  >Entrar</a></li>
+                        <li><a href="./registerUsuario.jsp">Registrarse</a></li>
+                    </ul>
+
+                    <!--
+                                                            <form action="" class="navbar-form navbar-left" role="search">
+                                                                    <div class="form-group">
+                                                                            <input type="text" class="form-control" placeholder="buscar">
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                            <span class="glyphicon glyphicon-search"></span>
+                                                                    </button>
+                                                            </form>
+                    -->
+                </div>
             </div>
-            <div class="col-md-9">
-                <h1 id="highmsg">Desvararte, just get recognized</h1>
-            </div>
-            <br/>
-        </div>
+        </nav>
     </header>
 
 </head>

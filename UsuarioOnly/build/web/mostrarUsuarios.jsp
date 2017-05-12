@@ -16,40 +16,40 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte-Usuarios</title>
     </head>
-    <div class="main">
-        <body>
-            <form method="POST" action="./dataSession">
-                <input type="submit" value="Actualizar">
-            </form>
-            <h3>Lista de usuarios</h3>
-            <c:if test="${!empty Usuarios}">
-                <div class="container">
-                       <table class="table  table-bordered">
-                           <tr class="danger">
-                            <th width="120">ID</th>
-                            <th width="120">Nombre</th>
-                            <th width="120">Apellidos</th>
-                            <th width="120">Sobrenombre</th>
-                            <th width="120">E-mail</th>
-                            <th width="120">Fecha de nacimiento</th>
-                            <th width="120">Presupuesto</th>
-                        </tr>
-                           <c:forEach items="${Usuarios}" var="user">
-                                   <tr>
-                                       <td width="120"><a href="./buscarUsuario?id=${user.getId()}">${user.getId()}</a></td>
-                                       <td width="120">${user.getNombres()}</td>
-                                       <td width="120">${user.getApellidos()}</td>
-                                <td width="120">${user.getSobrenombre()}</td>
-                                <td width="120">${user.getEmail()}</td>
-                                <td width="120">${user.getFechaDeNacimiento()}</td>
-                                <td width="120">${user.getPresupuesto()}</td>
-                                   </tr>
+
+    <body>
+        <div class="container" ALIGN="center" style="margin-top: -2em;">
+            <c:choose>
+                <c:when test="${!empty Usuarios}">
+                    <div class="container" ALIGN="center">
+                           <table class="table  table-bordered">
+                                <tr class="danger">
+                                    <th width="120">ID</th>
+                                    <th width="120">Nombre</th>
+                                    <th width="120">Apellidos</th>
+                                    <th width="120">Sobrenombre</th>
+                                    <th width="120">Rol</th>
+                                </tr>
+                               <c:forEach items="${Usuarios}" var="user">
+                                    <tr>
+                                    <td width="120"><a href="./buscarUsuario?id=${user.getId()}">${user.getId()}</a></td>
+                                    <td width="120">${user.getNombres()}</td>
+                                    <td width="120">${user.getApellidos()}</td>
+                                    <td width="120">${user.getSobrenombre()}</td>
+                                    <td width="120">${user.getRol()}</td>
+                                </tr>
                             </c:forEach>
-                    </table>
-                </div>
-            </c:if>   
-            <br/>
-        </body>
-    </div>
+                        </table>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <h1>
+                        No hay usuarios registrados
+                    </h1>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </body>
+
 </html>
 <%@include file="footer.jsp" %>

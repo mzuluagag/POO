@@ -10,13 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte- Registro</title>
     </head>
     
-    <div class="container" align="center" STYLE= "background-color:#DAF7A6" >
+    <div class="container" align="center" STYLE= "background-color:#DAF7A6; margin-top: -2em" >
         <br/>
         <body>
             <div class="form" style="width:23%">
@@ -27,6 +24,8 @@
                     E-mail: <input class="form-control" type="email" name="email" required><br> </br>
                     Identificación: <input class="form-control" type="text" name="id" required><br> </br>
                     Fecha de nacimiento: <input class="form-control" type="date" name="fdn" required><br> </br>
+                    Rol:&nbsp; <input type="radio"  name="rol" value="Artista" required>Artista &nbsp;&nbsp;
+                    <input type="radio"  name="rol" value="Usuario" required>Usuario<br><br>
                     <input class="btn btn-primary form-control" type="submit" name="Confirmar">
                 </form>
                 <c:if test="${!empty bienvenido}">

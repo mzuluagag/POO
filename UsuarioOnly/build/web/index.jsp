@@ -10,24 +10,50 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
         <title>Desvararte</title>
     </head>
-    <div class="container" ALIGN="center" STYLE= "background-color:#DAF7A6">
-    <body>
-        <br/>
-        <form  action="./registerUsuario.jsp" >
-            <button class="btn btn-block btn-lg btn-danger" type="submit" style='width:200px' >Registro</button><br/><br/>
-        </form>
-        <form  action="./buscarUsuario.jsp" >
-            <input class="btn btn-block btn-lg btn-danger" type="submit" value="Buscar usuarios" style='width:200px' /><br/><br/>
-        </form>
-        <form  action="./mostrarUsuarios.jsp" >
-            <input class="btn btn-block btn-lg btn-danger" type="submit" value="Mostrar usuarios" style='width:200px'/><br/><br/>
-        </form> 
+
+    <body >
+        <div class="container" ALIGN="center" STYLE= "background-color:#DAF7A6; margin-top: -2em;">
+            <br/>
+            <form  action="./registerUsuario.jsp" >
+                <button class="btn btn-block btn-lg btn-danger" type="submit" style='width:200px' >Registro</button><br/><br/>
+            </form>
+            <form action="./inicioSesion.jsp">
+                <button class="btn btn-block btn-lg btn-danger" type="submit" style='width:200px' >Iniciar sesion</button><br/><br/>
+            </form>
+            <form  action="./buscarUsuario.jsp" >
+                <input class="btn btn-block btn-lg btn-danger" type="submit" value="Buscar usuarios" style='width:200px' /><br/><br/>
+            </form>
+            <form  action="./mostrarUsuarios.jsp" >
+                <input class="btn btn-block btn-lg btn-danger" type="submit" value="Mostrar usuarios" style='width:200px'/><br/><br/>
+            </form> 
+        </div>
+        <!--
+        <section class="main container">
+            <div class="row">
+                <section class="posts col-md-9">
+                    <div class="mip">
+                        <ol class="breadcrumb">
+                            <li><a href="#">first</a></li> 
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3t</a></li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+            
+            <article class="post clearfix">
+                <a href="#" class="thumbnail pull-left">
+                    aca va algo
+                </a>
+                <h2 class="post-title">
+                    Titulo
+                </h2>
+            </article>
+        </section>
+        -->
     </body>
-    </div>
+
 </html>
 <%@include file="footer.jsp" %>

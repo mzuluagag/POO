@@ -8,18 +8,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-        
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
     </head>
-    <div class="footer">
+
     <body>
-        <h1 id="highmsg">Why are you so down wtf</h1>
-        <p style="color:#dbdbdb;">
-            Team ?
-        </p>
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p>Equipo ?</p>
+                </div>
+            </div>
+        </div>
+        -->
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container">
+
+                <div class="collapse navbar-collapse" id="navegacion-fm">
+                    
+                </div>
+            </div>
+        </nav>
     </body>
-    </div>
+
 </html>
